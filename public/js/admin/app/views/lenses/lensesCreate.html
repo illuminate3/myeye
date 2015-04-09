@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            ایجاد لنز جدید
+            <small>لنز جدید </small>
+        </h1>
+        <!--<ol class="breadcrumb">-->
+        <!--<li>-->
+        <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+        <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-push-3">
+        <div class="panel panel-default">
+            <!--<div class="panel-heading">-->
+                <!--Edit {{news.title}}-->
+            <!--</div>-->
+            <div class="panel-body">
+
+                <form role="form" enctype="multipart/form-data" ng-submit="submitCreateForm()">
+
+                    <div class="form-group">
+                        <label>عنوان لنز جدید </label>
+                        <input class="form-control" ng-model='formData.title' ng-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label>قیمت(تومان) </label>
+                        <input type="number" class="form-control" ng-model='formData.price' ng-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <p class="alert-danger">{{Errorss}}</p>
+                        <label>file : </label>
+                        <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <span class="glyphicon glyphicon-refresh spinning" ng-show="loading"></span>
+                        <span ng-show="loading" >Uploading...</span>
+
+                        <span class="alert-success">{{messageSuccess}}</span>
+
+
+                    </div>
+
+                    <button type="submit" class="btn btn-default">ایجاد</button>
+                    <a href="#lenses" ng-click="cancelCreate()" class="btn btn-default">انصراف</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

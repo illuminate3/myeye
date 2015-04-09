@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            اصلاح جنس فریم
+            <small>جنس فریم</small>
+        </h1>
+        <!--<ol class="breadcrumb">-->
+        <!--<li>-->
+        <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+        <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-push-3">
+        <div class="panel panel-default">
+            <!--<div class="panel-heading">-->
+                <!--Edit {{news.title}}-->
+            <!--</div>-->
+            <div class="panel-body">
+
+                <form role="form" enctype="multipart/form-data" ng-submit="submitForm()">
+
+                    <div class="form-group">
+                        <label>عنوان جنس فریم : </label>
+                        <input class="form-control" ng-model='materials.title' value="{{materials.title}}">
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-4" >
+                            <p style="padding: 1em;background-color: #e4b9b9;position: relative">
+                                فایل آپلود شده فعلی :  <a href="{{'../../..'+materials.image}}">{{materials.image}}</a>
+                                <!--<span ng-click="deleteUpload()" style="display:inline-block;position: absolute;top: 0;right: 0;cursor: pointer">-->
+                                <!--<i class="glyphicon glyphicon-remove-circle"></i>-->
+                                <!--</span>-->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="alert-danger">{{Errorss}}</p>
+                        <label>file : </label>
+                        <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <span class="glyphicon glyphicon-refresh spinning" ng-show="loading"></span>
+                        <span ng-show="loading" >Uploading...</span>
+                        <span class="alert-success">{{messageSuccess}}</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit Button</button>
+                    <a href="#materials" ng-click="cancelEdit()" class="btn btn-default">Cancel Button</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">
+            اضافه کردن کالای جدید
+            <small>کالای جدید</small>
+        </h2>
+        <!--<ol class="breadcrumb">-->
+        <!--<li>-->
+        <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+        <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-push-3">
+        <div class="panel panel-default">
+            <!--<div class="panel-heading">-->
+                <!--Edit {{news.title}}-->
+            <!--</div>-->
+            <div class="panel-body">
+
+                <form role="form" enctype="multipart/form-data" ng-submit="submitCreateForm()">
+
+                    <div class="form-group">
+                        <label>جنس فریم عینک</label>
+                        <select  name="material_select" id="material_select"  ng-model="formData.material_id" class="form-control" >
+                            <option ng-repeat="material in materials " value="{{material.id}}">{{material.title}} </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>قیمت(تومان)</label>
+                        <input type="number" name="price" class="input-sm" ng-model="formData.price" ng-required="true"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <p class="alert-danger">{{ErrorssItemFront}}</p>
+                            <label>تصویر کوچک(روبرو) </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileItemFront(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingItemFront"></span>
+                            <span ng-show="loadingItemFront" >Uploading...</span>
+
+                            <span class="alert-success">{{messageSuccessItemFront}}</span>
+                        </div>
+                        <div class="form-group">
+                            <p class="alert-danger">{{ErrorssItemSide}}</p>
+                            <label>تصویر کوچک(پهلو) </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileItemSide(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingItemSide"></span>
+                            <span ng-show="loadingItemSide" >Uploading...</span>
+
+                            <span class="alert-success">{{messageSuccessItemSide}}</span>
+                        </div>
+                        <div class="form-group">
+                            <p class="alert-danger">{{ErrorssMainFront}}</p>
+                            <label>تصویر اصلی(روبرو) </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileMainFront(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainFront"></span>
+                            <span ng-show="loadingMainFront" >Uploading...</span>
+
+                            <span class="alert-success">{{messageSuccessMainFront}}</span>
+                        </div>
+                        <div class="form-group">
+                            <p class="alert-danger">{{ErrorssMainSide}}</p>
+                            <label>تصویر اصلی(پهلو) </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileMainSide(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainSide"></span>
+                            <span ng-show="loadingMainSide" >Uploading...</span>
+
+                            <span class="alert-success">{{messageSuccessMainSide}}</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">ایجاد</button>
+                    <a href="#materials" ng-click="cancelCreate()" class="btn btn-default">انصراف</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+
+var teacherApp = angular.module('teacherApp',['ngRoute'])
+        .config(function($routeProvider){
+            $routeProvider
+                .when('/allFrames',
+                    {
+                        controller:'FramesController',
+                        templateUrl:'../../../resources/views/admin/frames/index.html'
+                    }
+                );
+
+        })
+        .filter("checkBoxFn", function () {
+            return function(data) {
+                if (angular.isArray(data)) {
+                    for (var i = 0; i < data.length; i++) {
+                        data[i]['checkbox'] = false;
+                    }
+                }
+                return data;
+            }
+        });
