@@ -61,6 +61,7 @@
     {{--<script src="{{asset('js/admin/custom.js')}}"></script>--}}
     <script src="{{asset('js/angular.min.js')}}"></script>
     <script src="{{asset('js/angular-route.min.js')}}"></script>
+    <script src="{{asset('js/admin/tinymce-ui.js')}}"></script>
     <script src="{{asset('js/admin/app/app.js')}}"></script>
     <script src="{{asset('js/admin/app/services/messageFactory.js')}}"></script>
     {{--<script src="{{asset('js/angular-pickadate.min.js')}}"></script>--}}

@@ -1,5 +1,5 @@
 
-var shwoodApp = angular.module('shwoodApp',['ngRoute'])
+var shwoodApp = angular.module('shwoodApp',['ngRoute','ui.tinymce'])
         .config(function($routeProvider){
             $routeProvider
                 .when('/frames',
@@ -82,7 +82,29 @@ var shwoodApp = angular.module('shwoodApp',['ngRoute'])
                 {
                     controller:'LensesEditController',
                     templateUrl:'/js/admin/app/views/lenses/lensesEdit.html'
-                });
+                }).when('/sunglassesLenses/create/:itemId',
+                {
+                    controller:'SunglassesLensesCreateController',
+                    templateUrl:'/js/admin/app/views/sunglassesLenses/sunglassesLensesCreate.html'
+                }
+            )
+                .when('/sunglassesLenses/show/:itemId',
+                {
+                    controller:'SunglassesLensesEditController',
+                    templateUrl:'/js/admin/app/views/sunglassesLenses/sunglassesLensesEdit.html'
+                }
+            )
+                .when('/sunglassesLenses/:itemId',
+                {
+                    controller:'SunglassesLensesController',
+                    templateUrl:'/js/admin/app/views/sunglassesLenses/sunglassesLenses.html'
+                }
+            ).when('/',
+                {
+                    controller:'MainController',
+                    templateUrl:'/js/admin/app/views/main/main.html'
+                }
+            );
 
         })
         .filter("checkBoxFn", function () {

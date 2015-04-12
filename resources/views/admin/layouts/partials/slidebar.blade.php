@@ -1,24 +1,24 @@
 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li class="active">
+            <li class="{{Request::is('adminmaster') ? 'active' : ''}}">
                 <a href="/adminmaster"><i class="fa fa-fw fa-dashboard"></i> صفحه اصلی</a>
             </li>
-            <li>
+            <li class="{{Request::is('adminmaster/framesAll') ? 'active' : ''}}">
                 <a href="/adminmaster/framesAll/#/frames"><i class="fa fa-fw fa-file"></i> شکل فریم عینک</a>
             </li>
-            <li>
+            <li class="{{Request::is('adminmaster/materialsAll') ? 'active' : ''}}">
                 <a href="/adminmaster/materialsAll/#/materials"><i class="fa fa-fw fa-file"></i>جنس فریم عینک</a>
             </li>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#lenses"><i class="fa fa-fw fa-arrows-v"></i> لنز عینک  <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="lenses" class="collapse">
-                    <li>
+                    <li class="{{Request::is('adminmaster/lensesAll') ? 'active' : ''}}">
                         <a href="/adminmaster/lensesAll/#lenses">لنز عینک آفتابی</a>
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="{{Request::is('adminmaster/productsAll') ? 'active' : ''}}">
                 <a href="/adminmaster/productsAll/#/products"><i class="fa fa-fw fa-file"></i> محصولات</a>
             </li>
             {{--<li>--}}

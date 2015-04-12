@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <label>جنس فریم عینک</label>
                         <select  name="material_select" id="material_select"  ng-model="details.material_id" class="form-control" >
-                            <option ng-repeat="material in materials " value="{{material.id}}">{{material.title}} </option>
+                            <option ng-repeat="material in materials " ng-selected="material.id == details.material_id ? true : false" value="{{material.id}}">{{material.title}} </option>
                         </select>
                     </div>
                     <div class="form-group">

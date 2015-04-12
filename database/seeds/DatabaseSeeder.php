@@ -4,8 +4,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder {
-    protected $tables = ['frames','material_product','products','materials','lenses'];
-    protected $seeders = ['Frame','Material_Product','Product','Material','Lense'];
+    protected $tables = ['frames','material_product','products','materials','lenses','sunglassesLenses','users'];
+    protected $seeders = ['Frame','Material_Product','Product','Material','Lense','SunglassesLenses','User'];
 
     /**
      * Run the database seeds.

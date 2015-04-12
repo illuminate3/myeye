@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class MaterialProduct extends Model {
+class Sunglass_Lense extends Model {
 
-	protected $table = 'material_product';
+	protected $table = 'sunglassesLenses';
 
-    protected $fillable = ['material_id','product_id','image_item_front','image_item_side','image_main_front','image_main_side','price'];
+    protected $fillable = ['material_product_id','lense_id','image_main_front','image_main_side'];
 
     //
 
@@ -26,8 +26,5 @@ class MaterialProduct extends Model {
         return 'true';
     }
 
-    public function lenses(){
-        return $this->belongsToMany('App\Lense','sunglassesLenses')->withPivot('image_main_front','image_main_side','active','id');
-    }
 
 }

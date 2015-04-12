@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">
+            اصلاح لنز عینک آفتابی
+        </h2>
+        <!--<ol class="breadcrumb">-->
+        <!--<li>-->
+        <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+        <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-push-3">
+        <div class="panel panel-default">
+            <!--<div class="panel-heading">-->
+                <!--Edit {{news.title}}-->
+            <!--</div>-->
+            <div class="panel-body">
+
+                <form role="form" enctype="multipart/form-data" ng-submit="submitForm()">
+
+                    <div class="form-group">
+                        <label>لنز عینک آفتابی </label>
+                        <select  name="lense_select" id="lense_select"  ng-model="sunglasses.lense_id" class="form-control" >
+                            <option  ng-repeat="lense in lenses "  ng-selected="lense.id == sunglasses.lense_id ? true : false" value="{{lense.id}}">{{lense.title}} </option>
+                        </select>
+                    </div>
+
+                    <div class="row panel panel-body" style="border: 1px dotted darkblue">
+
+                    <div class="row panel panel-body" style="border: 1px dotted darkblue">
+                        <div class="form-group " style="width: 50%;">
+                            <p style="padding: 1em;background-color: #e4b9b9;position: relative">
+                                تصویر اصلی(روبرو) فعلی   <a href="{{sunglasses.image_main_front}}"> <img src="{{sunglasses.image_main_front}}" alt="" width="120px"/></a>
+                                <!--<span ng-click="deleteUpload()" style="display:inline-block;position: absolute;top: 0;right: 0;cursor: pointer">-->
+                                <!--<i class="glyphicon glyphicon-remove-circle"></i>-->
+                                <!--</span>-->
+                            </p>
+                        </div>
+
+                        <div class="form-group " >
+                            <p class="alert-danger">{{Errorss}}</p>
+                            <label>آپلود تصویر اصلی(روبرو) ‌ </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileMainFront(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainFront"></span>
+                            <span ng-show="loadingMainFront" >Uploading...</span>
+                            <span class="alert-success">{{messageSuccessMainFront}}</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row panel panel-body" style="border: 1px dotted darkblue">
+                        <div class="form-group " style="width: 50%;">
+                            <p style="padding: 1em;background-color: #e4b9b9;position: relative">
+                                تصویر اصلی(پهلو) فعلی <a href="{{sunglasses.image_main_side}}"> <img src="{{sunglasses.image_main_side}}" alt="" width="120px"/></a>
+                                <!--<span ng-click="deleteUpload()" style="display:inline-block;position: absolute;top: 0;right: 0;cursor: pointer">-->
+                                <!--<i class="glyphicon glyphicon-remove-circle"></i>-->
+                                <!--</span>-->
+                            </p>
+                        </div>
+
+                        <div class="form-group " >
+                            <p class="alert-danger">{{Errorss}}</p>
+                            <label>آپلود تصویر اصلی(پهلو) :‌ </label>
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadFileMainSide(this.files)"/>
+                            <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainSide"></span>
+                            <span ng-show="loadingMainSide" >Uploading...</span>
+                            <span class="alert-success">{{messageSuccessMainSide}}</span>
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-default">Submit Button</button>
+                    <span ng-click="cancelEdit()" class="btn btn-default">Cancel Button</span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

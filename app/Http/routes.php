@@ -21,7 +21,7 @@ Route::controllers([
 ]);
 
 
-Route::group(array('prefix' => 'adminmaster'),function(){
+Route::group(array('prefix' => 'adminmaster','middleware'=>['auth','adminAuth']),function(){
     /*,'before'=>'AdminFilter'*/
 
 	Route::get('/', 'AdminHomePageController@index');
@@ -64,13 +64,14 @@ Route::group(array('prefix' => 'adminmaster'),function(){
 
 
     Route::get('/sunglassesLenses/show', 'AdminSunglassesLensesController@details');
-//    Route::get('/sunglassesLenses/product/{id}', 'AdminSunglassesLensesController@showProductsDetails');
+    Route::get('/sunglassesLenses/lensesAll/{id}', 'AdminSunglassesLensesController@lensesAll');
 //    Route::get('/sunglassesLenses/getProduct/{id}', 'AdminSunglassesLensesController@getProduct');
     Route::get('/sunglassesLenses/active/{id}', 'AdminSunglassesLensesController@active');
     Route::post('/sunglassesLenses/activeAll', 'AdminSunglassesLensesController@activeAll');
     Route::post('/sunglassesLenses/deleteAll', 'AdminSunglassesLensesController@deleteAll');
     Route::post('/sunglassesLenses/editUpload/{id}', 'AdminSunglassesLensesController@editUpload');
     Route::resource('/sunglassesLenses','AdminSunglassesLensesController');
+
 
 
 });
