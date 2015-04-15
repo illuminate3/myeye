@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration {
 			$table->increments('id');
 			$table->integer('frame_id');
             $table->string('title','250');
+            $table->text('detail');
             $table->tinyInteger('type');
             $table->tinyInteger('active')->default(1);
 			$table->timestamps();

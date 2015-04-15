@@ -12,5 +12,6 @@
     <script src="{{asset('js/admin/app/controller/materials/MaterialsController.js')}}"></script>
     <script src="{{asset('js/admin/app/controller/materials/MaterialsCreateController.js')}}"></script>
     <script src="{{asset('js/admin/app/controller/materials/MaterialsEditController.js')}}"></script>
+     <script src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
 
 @endsection

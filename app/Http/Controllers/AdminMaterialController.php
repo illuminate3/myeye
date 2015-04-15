@@ -96,6 +96,7 @@ class AdminMaterialController extends Controller {
 	{
         $material = Material::findOrFail($id);
         $material->title = Request::get('title');
+        $material->detail = Request::get('detail');
         $material->save();
         return 'true';
 	}

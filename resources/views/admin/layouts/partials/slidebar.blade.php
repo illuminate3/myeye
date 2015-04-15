@@ -10,10 +10,10 @@
             <li class="{{Request::is('adminmaster/materialsAll') ? 'active' : ''}}">
                 <a href="/adminmaster/materialsAll/#/materials"><i class="fa fa-fw fa-file"></i>جنس فریم عینک</a>
             </li>
-            <li>
+            <li class="{{Request::is('adminmaster/lensesAll') ? 'active' : ''}}">
                 <a href="javascript:;" data-toggle="collapse" data-target="#lenses"><i class="fa fa-fw fa-arrows-v"></i> لنز عینک  <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="lenses" class="collapse">
-                    <li class="{{Request::is('adminmaster/lensesAll') ? 'active' : ''}}">
+                    <li >
                         <a href="/adminmaster/lensesAll/#lenses">لنز عینک آفتابی</a>
                     </li>
                 </ul>

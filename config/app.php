@@ -144,6 +144,10 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        /*
+		 * File Manager
+		 */
+        'Pqb\FilemanagerLaravel\FilemanagerLaravelServiceProvider',
 
 	],
 
@@ -192,6 +196,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+        'FilemanagerLaravel' => 'Pqb\FilemanagerLaravel\Facades\FilemanagerLaravel',
 
 	],
 

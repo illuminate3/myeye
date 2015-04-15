@@ -13,5 +13,6 @@
     <script src="{{asset('js/admin/app/services/FramesFactory.js')}}"></script>
     <script src="{{asset('js/admin/app/controller/products/ProductsCreateController.js')}}"></script>
     <script src="{{asset('js/admin/app/controller/products/ProductsEditController.js')}}"></script>
+     <script src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
 
 @endsection

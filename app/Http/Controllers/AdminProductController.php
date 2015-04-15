@@ -44,6 +44,7 @@ class AdminProductController extends Controller {
         $product->frame_id = Request::get('frame_id');
         $product->title = Request::get('title');
         $product->type = Request::get('type');
+        $product->detail = Request::get('detail');
         $product->save();
 	}
 
@@ -81,6 +82,7 @@ class AdminProductController extends Controller {
         $product->title = Request::get('title');
         $product->frame_id= Request::get('frame_id');
         $product->type= Request::get('type');
+        $product->detail= Request::get('detail');
         $product->save();
         return 'true';
 	}

@@ -22,6 +22,7 @@ class Material_ProductTableSeeder extends Seeder {
                 'frame_id' => $faker->randomElement($frame_ids),
                 'title'=>$faker->word,
                 'type'=>$faker->randomElement($types),
+                'detail'=>'محصول بسیاااااااااار عالی و خوووووووووووووووووووووووووووووووووووووووووووووب ',
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);

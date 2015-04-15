@@ -42,6 +42,12 @@
                             <option value="0"> آفتابی</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label>توضیحات : </label>
+                        <textarea id="productEdit" ui-tinymce="tinymceOptions" ng-model="products.detail"></textarea>
+                    </div>
+
                     <button type="submit" class="btn btn-default">Submit Button</button>
                     <a href="#products" ng-click="cancelEdit()" class="btn btn-default">Cancel Button</a>
                 </form>

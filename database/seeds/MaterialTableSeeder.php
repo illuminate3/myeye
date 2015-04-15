@@ -16,24 +16,28 @@ class MaterialTableSeeder extends Seeder {
             \App\Material::create([
                 'title'=>'چوب گردو',
                 'image'=>'/images/materials/gerdoo.jpg',
+                'detail'=>'جنس ای محصول بسیار خوب است بسسسسسسسسسسسیاااااااااااررررررر ',
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);
             \App\Material::create([
                 'title'=>'چوب کاج',
                 'image'=>'/images/materials/kaj.jpg',
+                'detail'=>'جنس ای محصول بسیار خوب است بسسسسسسسسسسسیاااااااااااررررررر ',
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);
             \App\Material::create([
                 'title'=>'چوب سرو',
                 'image'=>'/images/materials/sarv.jpg',
+                'detail'=>'جنس ای محصول بسیار خوب است بسسسسسسسسسسسیاااااااااااررررررر ',
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);
             \App\Material::create([
                 'title'=>'چوب کاج-سرو',
                 'image'=>'/images/materials/kaj-sarv.jpg',
+                'detail'=>'جنس ای محصول بسیار خوب است بسسسسسسسسسسسیاااااااااااررررررر ',
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);

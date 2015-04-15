@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Material extends Model {
 
-    protected $fillable = ['title','image'];
+    protected $fillable = ['title','image','detail'];
 
     //
 

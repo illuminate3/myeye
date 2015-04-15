@@ -70,6 +70,11 @@
                             <span ng-show='order === "image" && reverse' class="glyphicon glyphicon-chevron-up"></span>
                         </th>
 
+                        <th ng-click="sort('detail')" style="text-align: center">توضیحات
+                            <span ng-show='order === "detail" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "detail" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+
                         <th ng-click="sort('created_at')">تاریخ ساخت
                             <span ng-show='order === "created_at" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
                             <span ng-show='order === "created_at" && reverse' class="glyphicon glyphicon-chevron-up"></span>
@@ -94,6 +99,7 @@
                         </td>
                         <td>{{material.title | limitTo:50}}</td>
                         <td style="text-align: center"><img class="img-circle img-thumbnail" src="{{material.image}}" width="30px" height="30px" alt=""/></td>
+                        <td>{{material.detail |htmlToPlaintext |  limitTo:80}} ...</td>
                         <td>{{material.created_at }}</td>
                         <td>{{material.updated_at }}</td>
                         <td  class="input-sm">

@@ -17,6 +17,7 @@ class CreateMaterialsTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('image',60);
+            $table->text('detail');
 			$table->tinyInteger('active')->default(1);
 			$table->timestamps();
 		});

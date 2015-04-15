@@ -73,6 +73,11 @@
                             <span ng-show='order === "type" && reverse' class="glyphicon glyphicon-chevron-up"></span>
                         </th>
 
+                        <th ng-click="sort('detail')">توضیحات
+                            <span ng-show='order === "detail" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "detail" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+
                         <th ng-click="sort('created_at')">تاریخ ساخت
                             <span ng-show='order === "created_at" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
                             <span ng-show='order === "created_at" && reverse' class="glyphicon glyphicon-chevron-up"></span>
@@ -98,6 +103,7 @@
                         <td style="font-weight: bold;font-size: 1.2em"><a  href="/adminmaster/productsDetail/show/{{product.id}}/#/details/{{product.id}}"> {{product.title | limitTo:50}} </a></td>
                         <td>{{product.frame.title }}</td>
                         <td>{{product.type == 1 ? 'طبی' : 'آفتابی' }}</td>
+                        <td>{{product.detail | htmlToPlaintext | limitTo:60 }} ...</td>
                         <td>{{product.created_at }}</td>
                         <td>{{product.updated_at }}</td>
                         <td  class="input-sm">

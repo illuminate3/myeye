@@ -14,11 +14,19 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
+Route::get('sun-eyewear', 'SunEyeWearController@getAll');
+Route::get('eyewear', 'EyeWearController@getAll');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(array('middleware' => 'auth'), function(){
+    Route::controller('filemanager', 'FilemanagerLaravelController');
+});
+
+
 
 
 Route::group(array('prefix' => 'adminmaster','middleware'=>['auth','adminAuth']),function(){

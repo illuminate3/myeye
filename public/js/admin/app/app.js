@@ -116,4 +116,11 @@ var shwoodApp = angular.module('shwoodApp',['ngRoute','ui.tinymce'])
                 }
                 return data;
             }
-        });
+
+        })
+        .filter('htmlToPlaintext', function() {
+            return function(text) {
+                return String(text).replace(/<[^>]+>/gm, '');
+            }
+        })
+        ;
