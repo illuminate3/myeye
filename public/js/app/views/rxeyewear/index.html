@@ -2,23 +2,48 @@
     <section>
         <div class="container">
             <a class="mobile-only filters-dropdown"> Filters<i class="icon-down_arrow-xs"></i></a>
+            <div style="overflow: hidden "class="pull-left">
+                <h3>جنس چوب </h3>
+                <ol class="breadcrumb ">
+                    <li ng-repeat="mat in materials" ng-click="changeMaterial(mat)"><span>{{mat.title}}</span></li>
+                    <li ng-click="resetMaterial()">همه‌ی حالات </li>
+                </ol>
+
+            </div>
+
+            <div style="overflow: hidden "class="pull-right">
+                <h3>نما</h3>
+                <ol class="breadcrumb ">
+                    <li ng-click="changeImageView('front')"><span>رو‌به‌رو</span></li>
+                    <li ng-click="changeImageView('side')"><span>پهلو</span></li>
+                </ol>
+            </div>
 
         </div>
     </section>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="product in products">
-            <div style="text-align: center;margin-top: 3em">
-                <!--product.materials[0].pivot.image_item_front-->
-                <img ng-src="{{product_material(product,material_id,view) }}" width="250px" alt=""/>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
-                <h2 style="text-align: center">{{product.title}}</h2>
-                <span style="text-align: center">{{product.materials[0].pivot.price}} تومان</span>
-                <ul>
-                    <li ng-repeat="material in product.materials"><img ng-src="{{material.image}}" alt=""/></li>
+        <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="product in products | withMaterial " ng-if=" product.materials.length > 0">
+            <!--| materialSelected:material_selected-->
+                <div style="margin: 1em">
+                <div  style="text-align: center;margin-top: 3em" ng-switch="imageView">
+                    <!--product.materials[0].pivot.image_item_front-->
+                    <img ng-switch-when='front' ng-init="product.image = productInitImage(product,'front')"  ng-src="{{product.image }}" width="250px" alt=""/>
+                    <img ng-switch-when='side' ng-init="product.image = productInitImage(product,'side')"  ng-src="{{product.image }}" width="250px" alt=""/>
+                    <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
+                    <h2 style="text-align: center">{{product.title}}</h2>
+                    <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price}} تومان</span>
+
+                </div>
+                <ul class="item_materials">
+                    <li ng-if=" product.materials.length > 0" ng-repeat="material in product.materials">
+                        <span ng-if="material.pivot.active == 1" ng-click="image_item(product,material)" >
+                            <img class="img-circle img-thumbnail " width="30px"  ng-src="{{material.image}}" alt=""/>
+                        </span>
+                    </li>
                 </ul>
-            </div>
+                </div>
 
         </div>
         <!--<div class="col-md-4 col-sm-6">-->

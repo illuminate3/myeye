@@ -1,27 +1,92 @@
 angular.module('eyewearApp')
 
-    .controller('RxEyewearController',function($scope,$http,RxEyewearFactory,messageFactory,$filter) {
+    .controller('RxEyewearController',function($scope,$http,RxEyewearFactory,MaterialsFactory,messageFactory,$filter) {
+        $scope.imageView = 'front';
         $scope.products = [];
-        $scope.order = 'title';
-        $scope.reverse = true;
-        $scope.itemSelected='10';
+        $scope.materials = '';
+        $scope.material_selected;
+        var ps = [];
         function init(){
             RxEyewearFactory.getEyewears()
                 .success(function(data){
                     $scope.products = data;
+                    ps = data;
+                    //console.log(ps);
+                    //console.log($scope.products);
                 });
+            MaterialsFactory.getMaterials()
+                .success(function(data){
+                    $scope.materials = data;
+                });
+
         }
         init();
 
-        $scope.product_material= function(product,material_id,view){
-            material_id = typeof material_id !== 'undefined' ? material_id : 0;
-            view = typeof view !== 'undefined' ? view : 'front';
-            if(view == 'front') {
-                return product.materials[parseInt(material_id)].pivot.image_item_front
+        $scope.resetMaterial = function(){
+            $scope.products = JSON.parse(JSON.stringify(ps));
+        };
+
+        $scope.productInitImage = function(pr,view){
+            if(view == 'front'){
+
+                return pr.materials[0].pivot.image_item_front;
             }
-            if(view == 'side') {
-                return product.materials[parseInt(material_id)].pivot.image_item_side
+
+            if(view == 'side'){
+
+                return pr.materials[0].pivot.image_item_side;
             }
+
+        };
+
+        var listItem=[];
+        $scope.changeMaterial = function(mat){
+            $scope.material_selected = mat;
+            $scope.products = JSON.parse(JSON.stringify(ps));
+
+            console.log($scope.products);
+            //init();
+
+
+            angular.forEach($scope.products, function (product , key) {
+                //console.log(product.materials);
+               listItem = $filter('filter')(product.materials , { pivot : { active : 1} , title: mat.title });
+                product.materials = listItem;
+                //console.log(listItem);
+                if(product.materials.length > 0){
+                    if($scope.imageView == 'front'){
+
+                        product.image = product.materials[0].pivot.image_item_front;
+                    }
+                    if($scope.imageView == 'side'){
+
+                        product.image = product.materials[0].pivot.image_item_side;
+                    }
+                }
+                //$scope.products[parseInt(key)].materials = product.materials;
+              //  console.log( $scope.products[parseInt(key)]);
+            });
+            //ActiveObjects = $filter('filter')($scope.books, {checked: true});
+            //console.log(ActiveObjects);
         }
+
+        $scope.image_item= function(product,material){
+            console.log('salam');
+                  var random = (new Date()).toString();
+            //+  "?cb=" + random
+                if($scope.imageView == 'front'){
+                    product.image = material.pivot.image_item_front ;
+                }
+
+                if($scope.imageView == 'side'){
+                    product.image = material.pivot.image_item_side;
+                }
+
+                product.price = material.pivot.price;
+        };
+
+        $scope.changeImageView = function(value){
+            $scope.imageView = value;
+        };
 
     });

@@ -11,7 +11,7 @@ class SunEyeWearController extends Controller {
     public function getAll(){
 
         $title = 'عینک آفتابی ';
-        return view('home',['title'=>$title]);
+        return view('products',['title'=>$title]);
     }
 	/**
 	 * Display a listing of the resource.

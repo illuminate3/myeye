@@ -18,5 +18,6 @@
 <script src="{{asset('js/app/app.js')}}"></script>
 <script src="{{asset('js/app/services/messageFactory.js')}}"></script>
 <script src="{{asset('js/app/services/RxEyewearFactory.js')}}"></script>
+<script src="{{asset('js/app/services/MaterialsFactory.js')}}"></script>
 <script src="{{asset('js/app/controller/RxEyewearController.js')}}"></script>
 @endsection

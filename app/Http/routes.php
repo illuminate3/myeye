@@ -16,6 +16,8 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 Route::get('sun-eyewear', 'SunEyeWearController@getAll');
 Route::get('eyewear', 'EyeWearController@getAll');
+Route::resource('rxEyewear', 'EyeWearController');
+Route::get('MaterialEyewear/materials', 'MaterialEyewearController@materials');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -3,7 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Request;
+
+use App\Product;
 
 class EyeWearController extends Controller {
 
@@ -11,7 +13,7 @@ class EyeWearController extends Controller {
     public function getAll(){
 
         $title = 'عینک آفتابی  ';
-        return view('home',['title'=>$title]);
+        return view('products',['title'=>$title]);
     }
 	/**
 	 * Display a listing of the resource.
@@ -20,7 +22,12 @@ class EyeWearController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return Product::whereType(1)->where('products.active', '=', '1')->with(array('materials' => function($query)
+        {
+            $query->where('materials.active', '=', '1');
+
+        }))->get();
+
 	}
 
 	/**

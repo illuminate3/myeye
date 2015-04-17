@@ -5,7 +5,7 @@ angular.module('eyewearApp')
             return $http.get('/rxEyewear');
         };
         factory.getSingleEyewears = function(id){
-            return $http.get('/eyewear/'+id);
+            return $http.get('/rxEyewear/'+id);
         };
 
         return factory;
