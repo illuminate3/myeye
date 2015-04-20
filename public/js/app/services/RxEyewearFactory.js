@@ -8,5 +8,9 @@ angular.module('eyewearApp')
             return $http.get('/rxEyewear/'+id);
         };
 
+        factory.getEyewearsWithId = function(id){
+            return $http.get('/rxEyewearProducts/'+id);
+        };
+
         return factory;
     });

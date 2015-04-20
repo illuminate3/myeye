@@ -5,7 +5,12 @@
             <div style="overflow: hidden "class="pull-left">
                 <h3>جنس چوب </h3>
                 <ol class="breadcrumb ">
-                    <li ng-repeat="mat in materials" ng-click="changeMaterial(mat)"><span>{{mat.title}}</span></li>
+                    <li ng-repeat="mat in materials | matcheckbox" ng-click="changeMaterial(mat)">
+                        <!--<label for="checkbox{{mat.id}}">-->
+                            <span>{{mat.title}}</span>
+                        <!--</label>-->
+                        <!--<input type="checkbox" id="checkbox{{mat.id}}" name="checkbox{{mat.id}}" ng-model="mat.checkbox" />-->
+                    </li>
                     <li ng-click="resetMaterial()">همه‌ی حالات </li>
                 </ol>
 
@@ -24,25 +29,29 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="product in products | withMaterial " ng-if=" product.materials.length > 0">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products | withMaterial " >
             <!--| materialSelected:material_selected-->
                 <div style="margin: 1em">
-                <div  style="text-align: center;margin-top: 3em" ng-switch="imageView">
-                    <!--product.materials[0].pivot.image_item_front-->
-                    <img ng-switch-when='front' ng-init="product.image = productInitImage(product,'front')"  ng-src="{{product.image }}" width="250px" alt=""/>
-                    <img ng-switch-when='side' ng-init="product.image = productInitImage(product,'side')"  ng-src="{{product.image }}" width="250px" alt=""/>
-                    <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
-                    <h2 style="text-align: center">{{product.title}}</h2>
-                    <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price}} تومان</span>
+                <a ng-init="product.pivotId = product.materials[0].pivot.id" ng-href="/eyewear-product/#/rxeyewear/{{product.pivotId}}/{{product.id}}">
+                    <div  style="text-align: center;margin-top: 3em;height: 220px">
+                        <!--product.materials[0].pivot.image_item_front-->
+                        <img ng-show="imageView == 'front'" ng-init="product.image.front = productInitImage(product,'front')" ng-model="product.image.front" ng-src="{{product.image.front }}" width="100%" alt=""/>
+                        <img ng-show="imageView == 'side'" ng-init="product.image.side = productInitImage(product,'side')" ng-model="product.image.side" ng-src="{{product.image.side }}" width="100%" alt=""/>
+                        <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
+                        <h2 style="text-align: center">{{product.title}}</h2>
+                        <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price}} تومان</span>
 
+                    </div>
+                </a>
+                <div style="width: 100%;position: relative;">
+                    <ul class="item_materials" style="position:absolute;right:20%;overflow: hidden ">
+                        <li ng-if=" product.materials.length > 0" ng-repeat="material in product.materials">
+                            <span ng-if="material.pivot.active == 1" ng-click="image_item(product,material)" >
+                                <img class="img-circle img-thumbnail " width="30px"  ng-src="{{material.image}}" alt=""/>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="item_materials">
-                    <li ng-if=" product.materials.length > 0" ng-repeat="material in product.materials">
-                        <span ng-if="material.pivot.active == 1" ng-click="image_item(product,material)" >
-                            <img class="img-circle img-thumbnail " width="30px"  ng-src="{{material.image}}" alt=""/>
-                        </span>
-                    </li>
-                </ul>
                 </div>
 
         </div>

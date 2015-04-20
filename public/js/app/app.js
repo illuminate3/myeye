@@ -7,7 +7,14 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
                     controller:'RxEyewearController',
                     templateUrl:'/js/app/views/rxeyewear/index.html'
                 }
-            ).when('/seyewear',
+            )
+                .when('/rxeyewear/:item/:product',
+                {
+                    controller:'RxEyewearProductController',
+                    templateUrl:'/js/app/views/rxeyewear/product.html'
+                }
+            )
+                .when('/seyewear',
                 {
                     controller:'SunEyewearController',
                     templateUrl:'/js/app/views/suneyewear/index.html'
@@ -15,42 +22,17 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
             );
         })
 
-        //.filter("materialSelected", function () {
-        //    return function(data,material) {
-        //
-        //
-        //        //console.log(data);
-        //       // var results = data;
-        //        if(material.length > 0 && angular.isArray(data)) {
-        //           // console.log($filter);
-        //            var res = [];
-        //                console.log(angular.isArray(data));
-        //                    for (var i = 0; i < data.length; i++) {
-        //                        for(var j=0; j < data[i]['materials'].length ; j++){
-        //                            //if( (data[i]['materials'][j].active == 0)){
-        //                            //    data[i]['materials'].splice(j,1);
-        //                            //}
-        //                            if( (data[i]['materials'][j].title == material)  ){
-        //                               res.push(data[i])
-        //                               break;
-        //                           }
-        //                        }
-        //                        //console.log(data[i]['materials']);
-        //                        //if (data[i]['materials'].indexOf(material) > 0) {
-        //                        //
-        //                        //    res.push(data[i]);
-        //                        //    //res.push(data[i]);
-        //                        //}
-        //                    }
-        //                console.log(res);
-        //                return res;
-        //        }else{
-        //            return data;
-        //        }
-        //
-        //    }
-        //
-        //})
+        .filter("matcheckbox", function () {
+            return function(data) {
+                if (angular.isArray(data)) {
+                    for (var i = 0; i < data.length; i++) {
+                        data[i]['checkbox']= true;
+                    }
+                }
+                return data;
+            }
+
+        })
         .filter("withMaterial", function () {
             return function(data) {
                 //console.log(data);
@@ -63,6 +45,15 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
                                 console.log(data[i]['materials'].length);
                                results.push(data[i]);
                             }
+                        }
+
+                        for (var i = 0; i < results.length ; i++) {
+                            //console.log(results[i]['materials'].length + 'sdafsaf');
+                            angular.forEach(results[i]['materials'],function(mat,key){
+                                if(mat.pivot.active == 0){
+                                    results[i]['materials'].splice(key,1);
+                                }
+                            });
                         }
                     }
                 return results;

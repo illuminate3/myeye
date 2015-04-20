@@ -47,7 +47,6 @@ angular.module('eyewearApp')
             console.log($scope.products);
             //init();
 
-
             angular.forEach($scope.products, function (product , key) {
                 //console.log(product.materials);
                listItem = $filter('filter')(product.materials , { pivot : { active : 1} , title: mat.title });
@@ -56,11 +55,11 @@ angular.module('eyewearApp')
                 if(product.materials.length > 0){
                     if($scope.imageView == 'front'){
 
-                        product.image = product.materials[0].pivot.image_item_front;
+                        product.image.front = product.materials[0].pivot.image_item_front;
                     }
                     if($scope.imageView == 'side'){
 
-                        product.image = product.materials[0].pivot.image_item_side;
+                        product.image.side = product.materials[0].pivot.image_item_side;
                     }
                 }
                 //$scope.products[parseInt(key)].materials = product.materials;
@@ -75,14 +74,20 @@ angular.module('eyewearApp')
                   var random = (new Date()).toString();
             //+  "?cb=" + random
                 if($scope.imageView == 'front'){
-                    product.image = material.pivot.image_item_front ;
+                    product.image.front = material.pivot.image_item_front ;
+                    product.image.side = material.pivot.image_item_side ;
                 }
 
                 if($scope.imageView == 'side'){
-                    product.image = material.pivot.image_item_side;
+                    product.image.side = material.pivot.image_item_side;
+                    product.image.front = material.pivot.image_item_front;
+                    //console.log( product.image.side);
+                    //console.log( product.image.front);
                 }
+            console.log( product.image.front);
 
                 product.price = material.pivot.price;
+                product.pivotId = material.pivot.id;
         };
 
         $scope.changeImageView = function(value){

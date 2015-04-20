@@ -57,3 +57,23 @@ ul.item_materials li {
     cursor: pointer;
 }
 
+.otherProducts{
+    border-left : 1px solid #e3e3e3;
+}
+.otherProductsPrice{
+    border: 1px solid #e3e3e3;
+    padding: 3em 1em;
+}
+
+.otherProductsPrice div{
+    margin:0 auto;
+    text-align: center;
+}
+/*.reveal-animation {*/
+/*transition: all 1s;*/
+/*}*/
+
+/*.reveal-animation:hover {*/
+    /*opacity: 0.5;*/
+/*}*/
+
