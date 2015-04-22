@@ -26,5 +26,9 @@ class Sunglass_Lense extends Model {
         return 'true';
     }
 
+    public function lense(){
+        return $this->belongsTo('App\Lense');
+    }
+
 
 }

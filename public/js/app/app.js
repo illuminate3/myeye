@@ -14,10 +14,16 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
                     templateUrl:'/js/app/views/rxeyewear/product.html'
                 }
             )
-                .when('/seyewear',
+                .when('/suneyewear',
                 {
                     controller:'SunEyewearController',
                     templateUrl:'/js/app/views/suneyewear/index.html'
+                }
+            )
+                .when('/suneyewear/:item/:product',
+                {
+                    controller:'SunEyewearProductController',
+                    templateUrl:'/js/app/views/suneyewear/product.html'
                 }
             );
         })

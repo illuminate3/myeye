@@ -13,8 +13,8 @@ class EyeWearController extends Controller {
 
     public function getAll(){
 
-        $title = 'عینک آفتابی  ';
-        return view('products',['title'=>$title]);
+        $title = 'عینک طبی ';
+        return view('products.eyewearProducts',['title'=>$title]);
     }
 
 
@@ -70,7 +70,7 @@ class EyeWearController extends Controller {
 	 **/
 	public function showProduct()
 	{
-        $title = 'عینک آفتابی  ';
+        $title = 'عینک طبی ';
         return view('products.eyewear',['title'=>$title]);
 	}
 

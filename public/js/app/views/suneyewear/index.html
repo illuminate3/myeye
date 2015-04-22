@@ -2,49 +2,58 @@
     <section>
         <div class="container">
             <a class="mobile-only filters-dropdown"> Filters<i class="icon-down_arrow-xs"></i></a>
-            <!--<form name="taxonomy_filters" class="ng-pristine ng-valid">-->
-                <!--<ul class="taxonomy-filters-options mobile-hide">-->
-                    <!--&lt;!&ndash; ngRepeat: filter in filters &ndash;&gt;-->
-                    <!--<li class="taxonomy-filters-options-option ng-scope" ng-repeat="filter in filters">-->
-                        <!--<h1 class="ng-binding">View</h1><ol class="taxonomy-filters-options-option-values">-->
-                        <!--&lt;!&ndash; ngRepeat: option in filter.options &ndash;&gt;-->
-                        <!--<li ng-repeat-start="option in filter.options" class="taxonomy-filters-options-option-values-value ng-scope toggled" ng-class="{ selected: option.selected, toggled: (filter.value === option.value) }">-->
-                            <!--<label class="ng-binding">-->
-                                <!--&lt;!&ndash; ngIf: filter.type === 'radio' &ndash;&gt;-->
-                                <!--<input class="ng-hide ng-scope ng-pristine ng-valid" ng-if="filter.type === 'radio'" type="radio" name="view" ng-value="option.value" ng-model="filter.value" value="front">-->
-                                <!--&lt;!&ndash; end ngIf: filter.type === 'radio' &ndash;&gt;&lt;!&ndash; ngIf: filter.type !== 'radio' &ndash;&gt;-->
-                                <!--Front </label></li>&lt;!&ndash; ngIf: !$last &ndash;&gt;-->
-                        <!--<li ng-repeat-end="" class="divider ng-scope" ng-if="!$last">/</li>-->
-                        <!--&lt;!&ndash; end ngIf: !$last &ndash;&gt;&lt;!&ndash; end ngRepeat: option in filter.options &ndash;&gt;-->
-                        <!--<li ng-repeat-start="option in filter.options" class="taxonomy-filters-options-option-values-value ng-scope" ng-class="{ selected: option.selected, toggled: (filter.value === option.value) }">-->
-                            <!--<label class="ng-binding">-->
-                                <!--&lt;!&ndash; ngIf: filter.type === 'radio' &ndash;&gt;-->
-                                <!--<input class="ng-hide ng-scope ng-pristine ng-valid" ng-if="filter.type === 'radio'" type="radio" name="view" ng-value="option.value" ng-model="filter.value" value="side right">-->
-                                <!--&lt;!&ndash; end ngIf: filter.type === 'radio' &ndash;&gt;&lt;!&ndash; ngIf: filter.type !== 'radio' &ndash;&gt; Side </label>-->
-                        <!--</li>&lt;!&ndash; ngIf: !$last &ndash;&gt;&lt;!&ndash; end ngRepeat: option in filter.options &ndash;&gt;-->
-                    <!--</ol>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</form>-->
+            <div style="overflow: hidden "class="pull-left">
+                <h3>جنس چوب </h3>
+                <ol class="breadcrumb ">
+                    <li ng-repeat="mat in materials | matcheckbox" ng-click="changeMaterial(mat)">
+                        <!--<label for="checkbox{{mat.id}}">-->
+                            <span>{{mat.title}}</span>
+                        <!--</label>-->
+                        <!--<input type="checkbox" id="checkbox{{mat.id}}" name="checkbox{{mat.id}}" ng-model="mat.checkbox" />-->
+                    </li>
+                    <li ng-click="resetMaterial()">همه‌ی حالات </li>
+                </ol>
+
+            </div>
+
+            <div style="overflow: hidden "class="pull-right">
+                <h3>نما</h3>
+                <ol class="breadcrumb ">
+                    <li ng-click="changeImageView('front')"><span>رو‌به‌رو</span></li>
+                    <li ng-click="changeImageView('side')"><span>پهلو</span></li>
+                </ol>
+            </div>
+
         </div>
     </section>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        <div style="margin-bottom: 2em" class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products | withMaterial " >
+            <!--| materialSelected:material_selected-->
+                <div style="margin: 1em">
+                <a ng-init="product.pivotId = product.materials[0].pivot.id" ng-href="/sunEyewear-product/#/suneyewear/{{product.pivotId}}/{{product.id}}">
+                    <div  style="text-align: center;margin-top: 3em;height: 220px">
+                        <!--product.materials[0].pivot.image_item_front-->
+                        <img ng-show="imageView == 'front'" ng-init="product.image.front = productInitImage(product,'front')" ng-model="product.image.front" ng-src="{{product.image.front }}" width="100%" alt=""/>
+                        <img ng-show="imageView == 'side'" ng-init="product.image.side = productInitImage(product,'side')" ng-model="product.image.side" ng-src="{{product.image.side }}" width="100%" alt=""/>
+                        <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
+                        <h2 style="text-align: center">{{product.title}}</h2>
+                        <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price}} تومان</span>
+
+                    </div>
+                </a>
+                <div style="width: 100%;position: relative;">
+                    <ul class="item_materials" style="position:absolute;right:20%;overflow: hidden ">
+                        <li ng-if=" product.materials.length > 0" ng-repeat="material in product.materials">
+                            <span ng-if="material.pivot.active == 1" ng-click="image_item(product,material)" >
+                                <img class="img-circle img-thumbnail " width="30px"  ng-src="{{material.image}}" alt=""/>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+
         </div>
     </div>
 </div>

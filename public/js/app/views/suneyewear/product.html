@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row" style="margin: 4em">
+           <h1 style="margin: 0 auto;text-align: center;border-bottom: 1px solid #CCAC46">{{product.product_title}} <small>{{titleLense}}</small></h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <img height="270px" ng-show="imageView == 'front'" class="reveal-animation" ng-mouseenter="mouseEnter('front')" ng-mouseleave="mouseLeave('side')" ng-src="{{product.image_main_front}}" alt=""/>
+            <img height="270px" ng-show="imageView == 'side'" class="reveal-animation" ng-mouseenter="mouseEnter('front')" ng-mouseleave="mouseLeave('side')" ng-src="{{product.image_main_side}}" alt=""/>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container" >
+    <div class="row" style="margin: 5em ">
+        <div class="col-lg-4 col-sm-12 otherProducts">
+            <div class="col-lg-6 col-sm-12" ng-repeat="item in products" style="margin-bottom: 2em">
+                <img  ng-click="changeMainProduct(item.id)" class="img-responsive" ng-src="{{item.image_item_front}}" alt=""/>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h3>انتخاب لنز </h3>
+            <div class="row">
+                <span ng-repeat="sunglass in lenses " ng-click="lenseClick(sunglass)"><img class="img-responsive img-circle" width="30px" ng-src="{{sunglass.lense.image}}" alt=""/></span>
+                <span ng-click="noLense(product.id)"><i class="fa fa-neuter">بدون لنز </i></span>
+            </div>
+        </div>
+        <div class="col-lg-4 pull-right col-sm-12 otherProductsPrice" >
+            <div>
+                <p style="font-weight: bold">{{product.price + lensePrice}} تومان </p>
+                <button type="button" class="btn btn-lg btn-warning">اضافه به کارت </button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,12 +14,20 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
-Route::get('sun-eyewear', 'SunEyeWearController@getAll');
+
 Route::get('eyewear', 'EyeWearController@getAll');
+Route::get('sunEyewear', 'SunEyeWearController@getAll');
 Route::get('rxEyewearProducts/{id}', 'EyeWearController@eyewearsWithId');
+Route::get('sun-eyewearProducts/{id}', 'SunEyeWearController@eyewearsWithId');
 Route::get('eyewear-product', 'EyeWearController@showProduct');
+Route::get('sunEyewear-product', 'SunEyeWearController@showProduct');
 Route::resource('rxEyewear', 'EyeWearController');
+Route::get('sun-eyewear/lenses/{id}', 'SunEyeWearController@lenses');
+Route::resource('sun-eyewear', 'SunEyeWearController');
 Route::get('MaterialEyewear/materials', 'MaterialEyewearController@materials');
+
+Route::get('adminLogin',array('middleware' => 'guest','uses'=>'SessionController@login'));
+Route::post('adminLogin','SessionController@valid');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

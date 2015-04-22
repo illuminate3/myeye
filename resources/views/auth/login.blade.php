@@ -50,6 +50,7 @@
 								<button type="submit" class="btn btn-primary">ورود</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">فراموش کردن رمز عبور؟</a>
+								<a class="btn btn-link" href="{{ url('/auth/register') }}">آیا حساب کاربری ندارید؟ کلیک کنید! </a>
 							</div>
 						</div>
 					</form>

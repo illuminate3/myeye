@@ -29,7 +29,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products | withMaterial " >
+        <div style="margin-bottom: 2em" class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products | withMaterial " >
             <!--| materialSelected:material_selected-->
                 <div style="margin: 1em">
                 <a ng-init="product.pivotId = product.materials[0].pivot.id" ng-href="/eyewear-product/#/rxeyewear/{{product.pivotId}}/{{product.id}}">
