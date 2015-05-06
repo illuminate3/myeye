@@ -1,0 +1,156 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+           سفارشات محصول {{ user.name }}
+        </h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10 col-sm-push-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                           <th>نام</th>
+                           <th>ایمیل</th>
+                           <th>تلفن منزل </th>
+                           <th>تلفن همراه </th>
+                           <th>نشانی </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info">
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td>{{user.mobile}}</td>
+                            <td style="width:400px">{{user.address}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 4em;">
+    <div class="col-lg-12">
+        <h3 class="page-header">
+           محصولات تایید شده توسط {{user.name}}
+        </h3>
+    </div>
+
+    <div class="col-lg-10 col-lg-offset-1">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>نام محصول </th>
+            <th>جنس محصول </th>
+            <th>تصویر </th>
+            <th>لنز </th>
+            <th>تعداد  </th>
+            <th>قیمت </th>
+            <th>خرید نهایی</th>
+            <th>حذف </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="active" ng-repeat="order in orders" ng-if="order.active == 1 && order.seen == 0">
+            <td>{{order.title}}</td>
+            <td>{{order.material_title}}</td>
+            <td>
+                <img class="img img-responsive" ng-if="order.lense_image != null" width="200px" ng-src="{{order.lense_image}}" alt=""/>
+                <img class="img img-responsive" ng-if="order.lense_image == null " width="200px" ng-src="{{order.material_product_image}}" alt=""/>
+            </td>
+            <td>
+                <span ng-if="order.lense_title == null">خیر</span>
+                <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
+            </td>
+            <td>{{order.count}}</td>
+            <td>{{order.count * order.price}}</td>
+            <td><span class="btn btn-primary" ng-click="acceptOrder(order)">خرید نهایی</span></td>
+            <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 4em;">
+    <div class="col-lg-12">
+        <h3 class="page-header">
+           محصولات تایید نشده توسط {{user.name}}
+        </h3>
+    </div>
+
+    <div class="col-lg-10 col-lg-offset-1">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>نام محصول </th>
+            <th>جنس محصول </th>
+            <th>تصویر </th>
+            <th>لنز </th>
+            <th>تعداد </th>
+            <th>قیمت </th>
+            <th>حذف </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="active" ng-repeat="order in orders" ng-if="order.active == 0 ">
+            <td>{{order.title}}</td>
+            <td>{{order.material_title}}</td>
+            <td>
+                <img class="img img-responsive" ng-if="order.lense_image != null" width="200px" ng-src="{{order.lense_image}}" alt=""/>
+                <img class="img img-responsive" ng-if="order.lense_image == null " width="200px" ng-src="{{order.material_product_image}}" alt=""/>
+            </td>
+            <td>
+                <span ng-if="order.lense_title == null">خیر</span>
+                <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
+            </td>
+            <td>{{order.count}}</td>
+            <td>{{order.price}}</td>
+            <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<div class="row" style="margin-top: 4em;">
+    <div class="col-lg-12">
+        <h3 class="page-header">
+           محصولات خریداری شده توسط {{user.name}}
+        </h3>
+    </div>
+
+    <div class="col-lg-10 col-lg-offset-1">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>نام محصول </th>
+            <th>جنس محصول </th>
+            <th>تصویر </th>
+            <th>لنز </th>
+            <th>تعداد </th>
+            <th>قیمت </th>
+            <th>حذف </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="active" ng-repeat="order in orders" ng-if="order.active == 1 && order.seen == 1 ">
+            <td>{{order.title}}</td>
+            <td>{{order.material_title}}</td>
+            <td>
+                <img class="img img-responsive" ng-if="order.lense_image != null" width="200px" ng-src="{{order.lense_image}}" alt=""/>
+                <img class="img img-responsive" ng-if="order.lense_image == null " width="200px" ng-src="{{order.material_product_image}}" alt=""/>
+            </td>
+            <td>
+                <span ng-if="order.lense_title == null">خیر</span>
+                <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
+            </td>
+            <td>{{order.count}}</td>
+            <td>{{order.price}}</td>
+            <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

@@ -12,6 +12,9 @@ angular.module('shwoodApp')
         };
 
 
+        factory.activeSlideShow = function(id){
+            return $http.get('/adminmaster/productsDetail/activeSlideShow/'+id);
+        };
         factory.active = function(id){
             return $http.get('/adminmaster/productsDetail/active/'+id);
         };

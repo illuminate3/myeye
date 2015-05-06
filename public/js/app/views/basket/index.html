@@ -1,0 +1,38 @@
+
+
+<table class="table">
+    <tr ng-repeat="order in orders" >
+        <td  style="padding: 2em">
+            <img ng-if="order.sunglass_image == null" width="160px" ng-src="{{order.material_product_Image}}" alt=""/>
+            <img ng-if="order.sunglass_image != null" width="160px" ng-src="{{order.sunglass_image}}" alt=""/>
+        </td>
+
+        <td>
+            <ul>
+                <li>
+                    {{order.product_title}}
+                </li>
+                <li>
+                    {{order.material_title}}
+                </li>
+            </ul>
+        </td>
+
+        <td>
+            <span>{{order.price}}</span><span> x </span>
+            <span><input type="number" ng-model="order.count" ng-change="change_quantity(order);" min="0" max="20" maxlength="2" minlength="1" ></span>
+        </td>
+
+    </tr>
+
+</table>
+
+<div class="row">
+    <p>قیمت کل : <span>{{totalPrice}} تومان</span></p>
+
+    <form action="/purchase">
+        <!--ng-class="{{ orders.length < 1 ? 'class=\'disabled\'' : '' }}"-->
+        <button  type="submit" class="btn btn-block btn-lg btn-primary ">سفارش</button>
+    </form>
+
+</div>

@@ -22,6 +22,7 @@ class CreateMaterialProductTable extends Migration {
             $table->string('image_item_side',60);
             $table->string('image_main_side',60);
             $table->string('image_main_front',60);
+            $table->tinyInteger('slide_show')->default(0);
             $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->tinyInteger('active')->default(1);

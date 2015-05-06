@@ -11,6 +11,7 @@ angular.module('shwoodApp')
             DetailsFactory.getDetails(item)
                 .success(function(data){
                     $scope.details = data;
+                    console.log( $scope.details);
                 });
             DetailsFactory.getProduct(item)
                 .success(function(ret){
@@ -41,6 +42,14 @@ angular.module('shwoodApp')
                 });
 
 
+        };
+        $scope.activeSlideshow = function(detail){
+            DetailsFactory.activeSlideShow(detail.pivot.id)
+                .success(function(data){
+                    console.log('aaaaaaaaaaa');
+                    //  init(item);
+                    detail.pivot.slide_show = ! detail.pivot.slide_show;
+                });
         };
         $scope.deleteItem = function(id){
             console.log(id);

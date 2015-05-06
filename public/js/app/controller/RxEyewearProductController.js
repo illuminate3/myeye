@@ -12,7 +12,8 @@ angular.module('eyewearApp')
             RxEyewearFactory.getSingleEyewears(itemId)
                 .success(function(data){
                     $scope.product= data[0];
-                //    console.log($scope.product);
+                   //console.log('asdfsafsaf');
+                  // console.log($scope.product);
                 });
 
         }

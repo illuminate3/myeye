@@ -1,5 +1,59 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">اسلاید شو اول </div>
+    <div class="panel-body">
+        <form action="">
+            <div class="form-group col-md-6 col-md-offset-1" >
+                <p class="alert-danger">{{ErrorssMainSlideShow}}</p>
 
+                <label>آپلود تصویر  </label>
+                <span class="btn btn-default ">
+                    <input type="file"  name="file" onchange="angular.element(this).scope().uploadFileMainSlideShow(this.files)"/>
+                </span>
+
+                <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainSlideShow"></span>
+                <span ng-show="loadingMainSlideShow" >Uploading...</span>
+
+                <span class="alert-success">{{messageSuccessMainSlideShow}}</span>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+           <div ng-repeat="img in images" class="col-md-6 " style="margin-bottom: 2em;">
+               <img  ng-src="{{img.image}}" alt="" class="img img-rounded img-responsive img-thumbnail" width="100%"/>
+               <span>
+                   <button class="btn btn-danger" ng-click="removeSlideShow(img)">x</button>
+                   <span class="btn btn-info">
+                       <form action="">
+                         <input type="file" ng-model="img" id="{{img.id}}" multiple onchange="angular.element(this).scope().uploadFileMainSlideShowEdit(this.files,this.id)" />
+                         <span class="glyphicon glyphicon-refresh spinning" ng-show="loadingMainSlideShowEdit"></span>
+                         <span ng-show="loadingMainSlideShowEdit" >Uploading...</span>
+                         <span class="alert-success">{{messageSuccessMainSlideShowEdit}}</span>
+                       </form>
+                   </span>
+               </span>
+
+           </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="panel panel-primary" style="margin-top:3em;margin-bottom: 3em">
+    <div class="panel-heading"> اسلایدشو دوم </div>
+    <div class="panel-body">
+        <div ng-repeat="simg in second_slideshows" class="col-md-3 " style="margin-bottom: 2em;">
+            <a ng-href="adminmaster/productsDetail/show/{{simg.product_id}}/#/details/{{simg.product_id}}">
+                <img  ng-src="{{simg.image_main_front}}" alt="" class="img img-rounded img-responsive img-thumbnail" width="100%"/>
+            </a>
+        </div>
+    </div>
+    </div>
+</div>
 
 <form method="post">
     <textarea id="editor1" ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+    <span ng-click="pageArticle()" class="btn btn-lg btn-danger pull-right" style="margin-top: .5em">ذخیره </span>
 </form>

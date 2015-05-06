@@ -1,0 +1,117 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+           سفارشات
+        </h1>
+        <!--<ol class="breadcrumb">-->
+            <!--<li>-->
+                <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+            <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-lg-12 col-sm-12" >
+        <div ng-show="{{success.show}}"  class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{success.msg}}
+        </div>
+
+        <!-- /.panel-heading -->
+        <div class="panel-body" >
+            <div class="table-responsive">
+                <table class="table  table-striped table-bordered table-hover">
+                    <!--<div class="row" >-->
+                        <!--<div id="delete" class="active col-sm-2">-->
+                            <!--<a href="" class="form-control  btn btn-danger btn-sm" ng-click="deleteAll()">حذف</a>-->
+                        <!--</div>-->
+                        <!--<div id="active" class="active col-sm-2">-->
+                            <!--<a href="" class="form-control  btn btn-success btn-sm" ng-click="activeAll()">وضعیت</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="row" style="margin: 1.3em">
+                        <div class="col-sm-2" id="" style="margin-bottom: .5em" >
+                            <label>
+                                تعداد در هر صفحه
+
+                            </label>
+                            <select name="item"  class="form-control input-sm" ng-model="itemSelected">
+                                <option value="10" selected="selected">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="100">500</option>
+                                <option value="100">1000</option>
+                            </select>
+                        </div>
+
+                        <div id="filter" class="filter pull-right col-sm-2" >
+                            <label>جستجو:</label>
+                            <input type="search" class="form-control input-sm" ng-model="itemFilter">
+                        </div>
+                    </div>
+
+                    <thead>
+                    <tr>
+                        <th width="1%">
+                            <input type="checkbox" name="checkall-toggle" value="" onclick="checkAll(this)">
+                        </th>
+                        <th ng-click="sort('name')">نام کاربر
+                            <span ng-show='order === "name" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "name" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+                        <th ng-click="sort('activeOrders')">تعداد سفارش تایید شده جدید
+                            <span ng-show='order === "activeOrders" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "activeOrders" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+                        <th ng-click="sort('passiveOrders')">تعداد سفارش تایید نشده
+                            <span ng-show='order === "passiveOrders" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "passiveOrders" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+                        <th ng-click="sort('soldOrders')">تعداد خرید کاربر
+                            <span ng-show='order === "soldOrders" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "soldOrders" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+
+                        <th ng-click="sort('updated_at')">تاریخ درخواست
+                            <span ng-show='order === "updated_at" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                            <span ng-show='order === "updated_at" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                        </th>
+
+                        <!--<th ng-click="sort('active')">وضعیت-->
+                            <!--<span ng-show='order === "active" && !reverse' class="glyphicon glyphicon-chevron-down"></span>-->
+                            <!--<span ng-show='order === "active" && reverse' class="glyphicon glyphicon-chevron-up"></span>-->
+                        <!--</th>-->
+                        <!--<th style="text-align: center">عملیات</th>-->
+                    </tr>
+
+                    </thead>
+                    <tbody  >
+                    <!--@foreach($packages->all() as $i=>$package)-->
+                    <tr ng-repeat="(index,order) in orders | filter:itemFilter | orderBy:order:reverse | limitTo:itemSelected  "  >
+                        <td class="center" >
+                            <input type="checkbox" id="cb0" name="cid[]" ng-change="selectedItems()" ng-model="order.checked" title="Checkbox for row {{index + 1}} ">
+                        </td>
+                        <td><a ng-href="#/orders/user/{{order.id}}">{{order.name | limitTo:50}}</a></td>
+                        <td>{{order.activeOrders }}</td>
+                        <td>{{order.passiveOrders }}</td>
+                        <td>{{order.soldOrders }}</td>
+                        <td>{{order.updated_at }}</td>
+
+                        <!--<td  class="input-sm" style="width: 190px">-->
+                            <!--&lt;!&ndash;<a style="float: right;margin-left: .5em;" href="{{'#/orders/'+ order.id}}" class="btn btn-success btn-mini"><i class="icon-white icon-heart"></i> اصلاح</a>&ndash;&gt;-->
+                            <!--<span  ng-click="deleteItem(order.id)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span>-->
+                        <!--</td>-->
+                        <!--<td>{{book.checkbox}}</td>-->
+
+                    </tr>
+                    <!--@endforeach-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

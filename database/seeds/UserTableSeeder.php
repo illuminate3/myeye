@@ -21,6 +21,14 @@ class UserTableSeeder extends Seeder {
                 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
                 'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
             ]);
+            \App\User::create([
+                'name'=>'ali',
+                'email'=>'ali@ali.com',
+                'password'=>Hash::make('123456'),
+                'role'=>'0',
+                'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
+                'updated_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
+            ]);
 
 
     }

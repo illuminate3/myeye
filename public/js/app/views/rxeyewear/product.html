@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row" style="margin: 4em">
-           <h1 style="margin: 0 auto;text-align: center;border-bottom: 1px solid #CCAC46">{{product.product_title}}</h1>
+           <h1 style="margin: 0 auto;text-align: center;border-bottom: 1px solid #CCAC46">{{product.product_title}} <small>بدون لنز </small></h1>
     </div>
 </div>
 
@@ -23,7 +23,7 @@
         <div class="col-lg-6 pull-right col-sm-12 otherProductsPrice" >
             <div>
                 <p style="font-weight: bold">{{product.price}} تومان </p>
-                <button type="button" class="btn btn-lg btn-warning">اضافه به کارت </button>
+                <a ng-href="/orders/{{product.id}}/0" class="btn btn-lg btn-warning"> ضافه به سبد خرید </a>
             </div>
         </div>
     </div>

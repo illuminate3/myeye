@@ -8,6 +8,7 @@ angular.module('eyewearApp')
         $scope.products = [];
         $scope.material_selected;
         $scope.lensePrice = 0;
+        $scope.lenseId = 0;
         var item  = $routeParams.item;
         var productId = $routeParams.product;
         var ps = [];
@@ -16,6 +17,7 @@ angular.module('eyewearApp')
                 .success(function(data){
                     $scope.product= data[0];
                     $scope.lensePrice = 0;
+                    $scope.lenseId = 0;
                     $scope.titleLense = 'بدون لنز';
                     initLenses(data[0].id);
                 });
@@ -56,10 +58,12 @@ angular.module('eyewearApp')
         $scope.lenseClick = function(sunglass){
 
             $scope.lensePrice = 0;
+            $scope.lenseId = 0;
             $scope.product.image_main_front = sunglass.image_main_front;
             $scope.product.image_main_side = sunglass.image_main_side;
             $scope.lensePrice = sunglass.lense.price;
             $scope.titleLense = sunglass.lense.title;
+            $scope.lenseId = sunglass.id;
         };
 
         $scope.noLense = function (id) {

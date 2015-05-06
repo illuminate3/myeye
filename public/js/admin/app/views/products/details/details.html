@@ -84,6 +84,11 @@
                                 <span ng-show='order === "active" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
                                 <span ng-show='order === "active" && reverse' class="glyphicon glyphicon-chevron-up"></span>
                             </th>
+
+                            <th ng-click="sort('slide_show')">اسلاید‌شو
+                                <span ng-show='order === "active" && !reverse' class="glyphicon glyphicon-chevron-down"></span>
+                                <span ng-show='order === "active" && reverse' class="glyphicon glyphicon-chevron-up"></span>
+                            </th>
                             <th style="text-align: center">عملیات</th>
                         </tr>
 
@@ -109,6 +114,15 @@
                                 </span>
                                 <span style="visibility: hidden">{{detail.pivot.active}}</span>
                             </td>
+
+                            <td  class="input-sm">
+
+                                <span ng-click="activeSlideshow(detail)" ng-model="detail.pivot.slide_show"  class="{{ detail.pivot.slide_show == 1 ? 'btn  btn-circle' : 'btn  btn-circle'}}">
+                                    <i class="{{ detail.pivot.slide_show == 1 ? 'glyphicon glyphicon-star icon-green' : 'glyphicon glyphicon-remove icon-red'}}"></i>
+                                </span>
+                                <span style="visibility: hidden">{{detail.pivot.slide_show}}</span>
+                            </td>
+
                             <td  class="input-sm" style="">
                                 <a style="float: right;margin-left: .5em;" href="{{'#/details/show/'+ detail.pivot.id}}" class="btn btn-success btn-mini"><i class="icon-white icon-heart"></i> اصلاح</a>
                                 <span  ng-click="deleteItem(detail.pivot.id)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span>

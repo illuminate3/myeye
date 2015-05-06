@@ -99,6 +99,16 @@ var shwoodApp = angular.module('shwoodApp',['ngRoute','ui.tinymce'])
                     controller:'SunglassesLensesController',
                     templateUrl:'/js/admin/app/views/sunglassesLenses/sunglassesLenses.html'
                 }
+            ).when('/orders/user/:userId',
+                {
+                    controller:'UserOrdersController',
+                    templateUrl:'/js/admin/app/views/orders/user.html'
+                }
+            ).when('/orders',
+                {
+                    controller:'OrdersController',
+                    templateUrl:'/js/admin/app/views/orders/index.html'
+                }
             ).when('/',
                 {
                     controller:'MainController',
@@ -118,6 +128,7 @@ var shwoodApp = angular.module('shwoodApp',['ngRoute','ui.tinymce'])
             }
 
         })
+
         .filter('htmlToPlaintext', function() {
             return function(text) {
                 return String(text).replace(/<[^>]+>/gm, '');

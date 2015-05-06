@@ -37,14 +37,14 @@ class AdminFirewall {
 
         if (! $user = $this->auth->user()){
 
-            return redirect()->guest('auth/login');
+            return redirect('adminLogin');
 
         }
 
         if(! $user->role == 1){
 
             $this->auth->logout();
-            return redirect()->guest('auth/login')->withErrors([
+            return redirect('adminLogin')->withErrors([
                 'error' => 'شما امکان دسترسی به این صفحه را ندارید  ',
             ]);;
         }

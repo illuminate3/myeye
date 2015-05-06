@@ -25,6 +25,11 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
                     controller:'SunEyewearProductController',
                     templateUrl:'/js/app/views/suneyewear/product.html'
                 }
+            ) .when('/basket',
+                {
+                    controller:'BasketController',
+                    templateUrl:'/js/app/views/basket/index.html'
+                }
             );
         })
 

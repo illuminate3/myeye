@@ -137,6 +137,13 @@ class AdminProductDetailController extends Controller {
         return 'true';
     }
 
+    public function activeSlideShow($id){
+        $material_product = MaterialProduct::findOrFail($id);
+        $material_product->slide_show = ! $material_product->slide_show;
+        $material_product->save();
+        return 'true';
+    }
+
     public function activeAll(){
         $inputs = (Request::all());
         return MaterialProduct::activeAll($inputs);

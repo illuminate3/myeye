@@ -34,7 +34,6 @@
 
     @include('layouts.partials.nav')
 
-
        @yield('content')
 
        @yield('footer')

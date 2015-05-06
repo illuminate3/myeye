@@ -30,4 +30,12 @@ class MaterialProduct extends Model {
         return $this->belongsToMany('App\Lense','sunglassesLenses')->withPivot('image_main_front','image_main_side','active','id');
     }
 
+    public function material(){
+        return $this->belongsTo('App\Material');
+    }
+
+    public function product(){
+        return $this->belongsTo('App\Product');
+    }
+
 }

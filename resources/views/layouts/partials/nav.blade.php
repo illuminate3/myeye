@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" >
      <nav class="navbar navbar-inverse navbar-fixed-top">
        <div class="container">
          <div class="navbar-header">
@@ -16,6 +16,9 @@
 
          </div>
          <ul class='nav pull-right'>
+            <div>
+                <i><a href="/shop/#/basket"><img src="/images/marker20.png" alt=""/></a></i>
+            </div>
           @if(Auth::user())
             <ul class="nav navbar-right top-nav">
                   <li class="dropdown">

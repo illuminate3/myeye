@@ -1,5 +1,5 @@
 angular.module('shwoodApp')
-    .controller('MainController', function($scope) {
+    .controller('MainController', function($scope,$http,$window) {
         $scope.tinymceOptions = {
 
             selector: "textarea#editor1",
@@ -51,4 +51,121 @@ angular.module('shwoodApp')
 
         }
         };
+
+
+        $scope.images = '';
+        $scope.second_slideshows = '';
+        $scope.loadingMainSlideShow = false;
+        $scope.messageSuccessMainSlideShow = '';
+        $scope.ErrorssMainSlideShow = '';
+        $scope.tinymceModel = '';
+
+        function init(){
+            $http.get('/adminmaster/mainSlideShow')
+                .success(function(data){
+                    $scope.images = data;
+                    console.log(data);
+                });
+            $http.get('/pages/main')
+                .success(function(data){
+                    $scope.tinymceModel = data;
+                    console.log(data);
+                });
+        }
+        init();
+
+        function init_second(){
+            $http.get('/adminmaster/secondSlideShow')
+                .success(function(data){
+                    $scope.second_slideshows = data;
+                    console.log(data);
+                });
+        }
+        init_second();
+
+        $scope.uploadFileMainSlideShow = function(files) {
+            $scope.messageSuccessMainSlideShow = '';
+            $scope.ErrorssMainSlideShow = '';
+            if(files[0].size < 210000) {
+                var fd = new FormData();
+                $scope.loadingMainSlideShow = true;
+
+                fd.fileMainSlideShow = files[0].name;
+                //Take the first selected file
+                fd.append("fileMainSlideShow", files[0]);
+                //console.log(fd);
+
+                $http.post('/adminmaster/mainSlideShow', fd, {
+                    withCredentials: false,
+                    headers: {'Content-Type': undefined},
+                    transformRequest: angular.identity
+                }).success(function (data) {
+                    console.log(data);
+                    $scope.loadingMainSlideShow = false;
+                    $scope.messageSuccessMainSlideShow = 'Your file uploaded successfully';
+                    init();
+                }).error(function () {
+                    $scope.loadingMainSlideShow = false;
+                    $scope.ErrorssMainSlideShow = 'Your file uploaded not completed';
+                });
+            }else{
+                $scope.ErrorssMainSlideShow = 'Your file is bigger than 210 kilobyte';
+
+                $window.alert('Your can not be bigger than 210 kilobyte')
+            }
+
+        };
+
+        $scope.removeSlideShow = function(img){
+            if($window.confirm('Do you really want to delete this image? ')){
+                $http.delete('/adminmaster/mainSlideShow/'+ img.id)
+                    .success(function(data){
+                        init();
+
+                    });
+            }
+
+        };
+
+        $scope.uploadFileMainSlideShowEdit = function(files,id) {
+
+            $scope.messageSuccessMainSlideShowEidt = '';
+            $scope.ErrorssMainSlideShowEdit = '';
+            if(files[0].size < 210000) {
+                var fd = new FormData();
+                $scope.loadingMainSlideShowEdit = true;
+
+                fd.fileMainSlideShowEidt = files[0].name;
+                //Take the first selected file
+                fd.append("fileMainSlideShowEdit", files[0]);
+                //console.log(fd);
+
+                $http.post('/adminmaster/mainSlideShowEdit/' + id, fd, {
+                    withCredentials: false,
+                    headers: {'Content-Type': undefined},
+                    transformRequest: angular.identity
+                }).success(function (data) {
+                    console.log(data);
+                    $scope.loadingMainSlideShowEdit = false;
+                    $scope.messageSuccessMainSlideShowEdit = 'Your file uploaded successfully';
+                    init();
+                }).error(function () {
+                    $scope.loadingMainSlideShowEdit = false;
+                    $scope.ErrorssMainSlideShowEdit = 'Your file uploaded not completed';
+                });
+            }else{
+                $scope.ErrorssMainSlideShowEdit = 'Your file is bigger than 210 kilobyte';
+
+                $window.alert('Your can not be bigger than 210 kilobyte')
+            }
+
+        };
+
+        $scope.pageArticle = function () {
+            $http.post('/pages/main',JSON.stringify({'description' : $scope.tinymceModel}))
+                .success(function () {
+                    $window.alert('تغییرات با موقیت انجام شد ');
+                })
+        };
+
     });

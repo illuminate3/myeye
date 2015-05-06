@@ -19,6 +19,9 @@
 <!-- /.row -->
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/admin/fileinput.min.css')}}"/>
+@endsection
 @section('js')
     <script src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
     {{--<script src="{{asset('js/admin/tinyeditor.js')}}"></script>--}}

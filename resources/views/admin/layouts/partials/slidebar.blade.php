@@ -21,6 +21,10 @@
             <li class="{{Request::is('adminmaster/productsAll') ? 'active' : ''}}">
                 <a href="/adminmaster/productsAll/#/products"><i class="fa fa-fw fa-file"></i> محصولات</a>
             </li>
+
+            <li class="{{Request::is('adminmaster/sales') ? 'active' : ''}}">
+                <a href="/adminmaster/sales/#/orders"><i class="fa fa-fw fa-file"></i> سفارشات </a>
+            </li>
             {{--<li>--}}
                 {{--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>--}}
             {{--</li>--}}

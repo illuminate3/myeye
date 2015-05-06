@@ -2,7 +2,14 @@
 
 
 @section('content')
-    <div ng-view></div>
+
+<div class="container">
+    <div class="row" style="margin-top: 5em">
+        @include('flash::message')
+    </div>
+</div>
+
+<div ng-view></div>
 @endsection
 
 @section('footer')

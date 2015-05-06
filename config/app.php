@@ -148,6 +148,11 @@ return [
 		 * File Manager
 		 */
         'Pqb\FilemanagerLaravel\FilemanagerLaravelServiceProvider',
+        /*
+		 * Flash Messages
+		 */
+        'Laracasts\Flash\FlashServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
 
 	],
 
@@ -197,6 +202,9 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         'FilemanagerLaravel' => 'Pqb\FilemanagerLaravel\Facades\FilemanagerLaravel',
+        'Flash'     => 'Laracasts\Flash\Flash',
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Form'      => 'Illuminate\Html\FormFacade',
 
 	],
 

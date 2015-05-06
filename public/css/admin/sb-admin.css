@@ -240,5 +240,13 @@ ul.alert-dropdown {
     from { -webkit-transform: rotate(0deg);}
     to { -webkit-transform: rotate(360deg);}
 }
-
+/* icon style*/
+.icon-red {
+    color: darkred;
+    font-size: 1.7em;
+}
+.icon-green {
+    color: darkgreen;
+    font-size: 1.7em;
+}
 

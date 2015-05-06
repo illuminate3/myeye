@@ -1,7 +1,7 @@
-@extends('app')
+@extends('layouts.product')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 5em">
 	<div class="row" style="direction: rtl">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
@@ -22,14 +22,14 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group" style="direction: ltr">
-							<label class="col-md-4 control-label">Email :  </label>
+							<label class="col-md-4 control-label">ایمیل </label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
 
 						<div class="form-group" style="direction: ltr">
-							<label class="col-md-4 control-label"> Password :  </label>
+							<label class="col-md-4 control-label"> رمز عبوری  </label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">
 							</div>
