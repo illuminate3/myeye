@@ -41,7 +41,7 @@
                         <img ng-show="imageView == 'side'" ng-init="product.image.side = productInitImage(product,'side')" ng-model="product.image.side" ng-src="{{product.image.side }}" width="100%" alt=""/>
                         <!--<p><a class="btn btn-default" href="#" role="button">View details »</a></p>-->
                         <h2 style="text-align: center">{{product.title}}</h2>
-                        <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price}} تومان</span>
+                        <span style="text-align: center" ng-init="product.price = product.materials[0].pivot.price" ng-model="product.price">{{product.price | number : fractionSize }} تومان</span>
 
                     </div>
                 </a>

@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-6 pull-right col-sm-6 col-xs-8 otherProductsPrice" >
             <div>
-                <p style="font-weight: bold">{{product.price}} تومان </p>
+                <p style="font-weight: bold">{{product.price | number : fractionSize}} تومان </p>
                 <a ng-href="/orders/{{product.id}}/0" class="btn btn-lg btn-warning">اضافه به سبد خرید</a>
             </div>
         </div>

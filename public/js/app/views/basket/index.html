@@ -28,7 +28,7 @@
 </table>
 
 <div class="row">
-    <p>قیمت کل : <span>{{totalPrice}} تومان</span></p>
+    <p class="btn btn-info pull-right" style="margin-bottom: 1.3em;margin-left: 2em">قیمت کل : <span>{{totalPrice | number : fractionSize}} تومان</span></p>
 
     <form action="/purchase">
         <!--ng-class="{{ orders.length < 1 ? 'class=\'disabled\'' : '' }}"-->

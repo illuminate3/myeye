@@ -25,13 +25,13 @@
         <div class="col-lg-4 col-sm-3 col-xs-6 otherProducts">
             <h3 style="margin: 1em 0">انتخاب لنز </h3>
             <div class="row " style="padding: 1em">
-                <span class="pull-left" style="margin-left: 1em" ng-repeat="sunglass in lenses " ng-click="lenseClick(sunglass)"><img class="img-responsive img-circle" width="30px" ng-src="{{sunglass.lense.image}}" alt=""/></span>
-                <span class="pull-left" ng-click="noLense(product.id)"><i class="fa fa-neuter">بدون لنز </i></span>
+                <span class="pull-left" style="margin-left: 1em" ng-repeat="sunglass in lenses " ng-click="lenseClick(sunglass)"><img class="img-responsive img-circle" width="30px" ng-src="{{sunglass.lense.image}}" alt=""/> {{sunglass.lense.title}}</span>
+                <span class="pull-left btn btn-sm btn-default" ng-click="noLense(product.id)"><i class="fa fa-neuter">بدون لنز </i></span>
             </div>
         </div>
         <div class="col-lg-4 pull-right col-sm-5 col-xs-11 otherProductsPrice" >
             <div>
-                <p style="font-weight: bold">{{product.price + lensePrice}} تومان </p>
+                <p style="font-weight: bold">{{ ( product.price + lensePrice ) | number : fractionSize}} تومان </p>
                 <a ng-href="/orders/{{product.id}}/{{lenseId}}" class="btn btn-lg btn-warning">اضافه به سبد خرید </a>
 
             </div>

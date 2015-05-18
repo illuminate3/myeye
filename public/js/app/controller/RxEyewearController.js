@@ -56,10 +56,12 @@ angular.module('eyewearApp')
                     if($scope.imageView == 'front'){
 
                         product.image.front = product.materials[0].pivot.image_item_front;
+                        product.price = product.materials[0].pivot.price;
                     }
                     if($scope.imageView == 'side'){
 
                         product.image.side = product.materials[0].pivot.image_item_side;
+                        product.price = product.materials[0].pivot.price;
                     }
                 }
                 //$scope.products[parseInt(key)].materials = product.materials;
