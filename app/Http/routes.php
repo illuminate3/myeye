@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 Route::get('pages/{title}', 'PagesController@index');
 Route::post('pages/{title}', 'PagesController@store');
 
-Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 
 Route::get('eyewear', 'EyeWearController@getAll');
 Route::get('sunEyewear', 'SunEyeWearController@getAll');

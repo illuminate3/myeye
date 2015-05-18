@@ -1,29 +1,30 @@
 <div class="container-fluid taxonomy-filters">
     <section>
         <div class="container">
-            <a class="mobile-only filters-dropdown"> Filters<i class="icon-down_arrow-xs"></i></a>
-            <div style="overflow: hidden "class="pull-left">
-                <h3>جنس چوب </h3>
+            <div class="row">
+            <div style="overflow: hidden "class=" col-xs-9">
+                <h3 style="margin-right: .8em">جنس چوب </h3>
                 <ol class="breadcrumb ">
-                    <li ng-repeat="mat in materials | matcheckbox" ng-click="changeMaterial(mat)">
+                    <li ng-repeat="mat in materials | matcheckbox" ng-click="changeMaterial(mat)" sibs>
                         <!--<label for="checkbox{{mat.id}}">-->
                             <span>{{mat.title}}</span>
                         <!--</label>-->
                         <!--<input type="checkbox" id="checkbox{{mat.id}}" name="checkbox{{mat.id}}" ng-model="mat.checkbox" />-->
                     </li>
-                    <li ng-click="resetMaterial()">همه‌ی حالات </li>
+                    <li ng-click="resetMaterial()" sibs class="clicked"><span>همه‌ی حالات </span></li>
                 </ol>
 
             </div>
 
-            <div style="overflow: hidden "class="pull-right">
-                <h3>نما</h3>
+            <div style="overflow: hidden "class=" col-xs-3">
+                <h3 style="margin-right: .8em"> نما</h3>
                 <ol class="breadcrumb ">
-                    <li ng-click="changeImageView('front')"><span>رو‌به‌رو</span></li>
-                    <li ng-click="changeImageView('side')"><span>پهلو</span></li>
+                    <li ng-click="changeImageView('front')" sibs class="clicked"><span>رو‌به‌رو</span></li>
+                    <li ng-click="changeImageView('side')" sibs><span>پهلو</span></li>
                 </ol>
             </div>
 
+        </div>
         </div>
     </section>
 </div>

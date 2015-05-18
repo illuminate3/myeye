@@ -17,6 +17,7 @@
 
      <!-- Custom styles for this template -->
      <link href="{{asset('css/custom.css')}}" rel="stylesheet">
+     <link rel="stylesheet" href="/css/font-awesome.min.css" />
 
      @yield('css')
 
@@ -32,6 +33,8 @@
    </head>
  <body>
 
+        @include('layouts.partials.order_nav')
+
        @yield('content')
 
        @yield('footer')
@@ -41,6 +44,7 @@
      ================================================== -->
      <!-- Placed at the end of the document so the pages load faster -->
      {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
+     <script src="{{asset('js/jquery.min.js')}}"></script>
      <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
  </body>

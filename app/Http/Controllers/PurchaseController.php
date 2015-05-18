@@ -21,7 +21,7 @@ class PurchaseController extends Controller {
             $order->active =1;
             $order->save();
         }
-        Flash::success('سفارش شما با موفقیت ثبت گردید. در اولین فرصت گروه ما با شما تماس خواهند گرفت');
+        Flash::overlay('سفارش شما با موفقیت ثبت گردید! در اسرع وقت همکاران ما با شما تماس خواهند گرفت. با تشکر از انتخاب شما', 'سفارش');
 		return redirect('/');
 	}
 

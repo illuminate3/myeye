@@ -2,23 +2,38 @@
     background-color: #F2EFE5;
     border-color: #F2EFE5;
     margin-top: 22px;
+    font-family: yekan;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navbar-nav li.active a {
+    color:#CCAC46  !important; ;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: #333;
 }
 
-/*.navbar-inverse .navbar-brand {*/
-    /*color: #525150;*/
-    /*font-weight: bold !important;*/
-/*}*/
+.navbar-header a:hover, .navbar-header a:active {
+    color: #CCAC46 !important;
+}
+.navbar-nav a:hover{
+    color: #CCAC46 !important;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #636311 !important;
+
+}
+#logo{
+    margin-right: 1em;
+}
+#basket:hover span{
+    color: darkred !important;
+}
 
 .navbar-header a:first-of-type{
     /*border-left: 2px solid;*/
     margin-left: 2.3em;
 }
-
-/*.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {*/
-    /*color: #ccac46 !important;*/
-    /*background-color: transparent;*/
-    /*font-weight: bold !important;*/
-/*}*/
 
 .taxonomy-filters{
 
@@ -60,6 +75,11 @@ ul.item_materials li {
 .otherProducts{
     border-left : 1px solid #e3e3e3;
 }
+.otherProducts h3{
+    border-left : 1px solid #e3e3e3;
+    font-family: yekan;
+    font-size: 1.3em;
+}
 .otherProductsPrice{
     border: 1px solid #e3e3e3;
     padding: 3em 1em;
@@ -69,11 +89,25 @@ ul.item_materials li {
     margin:0 auto;
     text-align: center;
 }
-/*.reveal-animation {*/
-/*transition: all 1s;*/
-/*}*/
 
-/*.reveal-animation:hover {*/
-    /*opacity: 0.5;*/
-/*}*/
+@font-face {
+    font-family: "yekan";
+    src: url(../fonts/Yekan.eot);
+    src: url(../fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(../fonts/Yekan.woff) format("woff"), url(../fonts/Yekan.ttf) format("truetype"), url(../fonts/Yekan.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+footer {
+    font-family: yekan;
+
+}
+
+.taxonomy-filters {
+    font-family: yekan;
+}
+
+.breadcrumb li.clicked span{
+    color: #CCAC46 !important;
+}
 

@@ -8,7 +8,7 @@ use Request;
 use App\Product;
 use App\MaterialProduct;
 
-class EyeWearController extends Controller {
+class EyeWearController extends BaseController {
 
 
     public function getAll(){
@@ -84,7 +84,7 @@ class EyeWearController extends Controller {
             ->leftJoin('materials',function($join) {
                 $join->on('materials.id', '=', 'material_product.material_id');
                     //->where('material.active','=',1);
-            })->select('products.title As product_title','materials.title As material_title','material_product.id','material_product.price','material_product.image_main_front','material_product.image_main_side','material_product.material_id','material_product.product_id')
+            })->select('products.title As product_title','products.detail As product_detail','materials.detail As material_detail','materials.title As material_title','material_product.id','material_product.price','material_product.image_main_front','material_product.image_main_side','material_product.material_id','material_product.product_id')
             ->get();
        // return MaterialProduct::findOrFail($id);
 	}

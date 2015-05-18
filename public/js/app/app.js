@@ -1,5 +1,5 @@
 
-var shwoodApp = angular.module('eyewearApp',['ngRoute'])
+var shwoodApp = angular.module('eyewearApp',['ngRoute','ngSanitize'])
         .config(function($routeProvider){
             $routeProvider
                 .when('/rxeyewear',
@@ -76,4 +76,14 @@ var shwoodApp = angular.module('eyewearApp',['ngRoute'])
                 return String(text).replace(/<[^>]+>/gm, '');
             }
         })
-    ;
+        .directive('sibs', function() {
+        return {
+            link: function(scope, element, attrs) {
+                element.bind('click', function() {
+                element.parent().children().removeClass('clicked');
+                element.addClass('clicked');
+            })
+        }
+        }
+        })
+         ;

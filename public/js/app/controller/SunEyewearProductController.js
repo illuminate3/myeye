@@ -1,12 +1,14 @@
 angular.module('eyewearApp')
 
-    .controller('SunEyewearProductController',function($scope,$http,SunEyewearFactory,messageFactory,$filter,$routeParams) {
+    .controller('SunEyewearProductController',function($scope,$http,SunEyewearFactory,messageFactory,$filter,$routeParams,$sce) {
         $scope.imageView = 'side';
         $scope.titleLense = '';
         $scope.product = [];
         $scope.lenses = [];
         $scope.products = [];
         $scope.material_selected;
+        $scope.detail_mat = '';
+        $scope.detail_product = '';
         $scope.lensePrice = 0;
         $scope.lenseId = 0;
         var item  = $routeParams.item;
@@ -20,6 +22,8 @@ angular.module('eyewearApp')
                     $scope.lenseId = 0;
                     $scope.titleLense = 'بدون لنز';
                     initLenses(data[0].id);
+                    $scope.detail_mat = $sce.trustAsHtml(data[0].material_detail);
+                    $scope.detail_product = $sce.trustAsHtml(data[0].product_detail);
                 });
 
 
