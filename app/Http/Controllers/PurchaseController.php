@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
 use Request;
 
-class PurchaseController extends Controller {
+class PurchaseController extends BaseController {
 
 
 	public function store()
