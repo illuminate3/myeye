@@ -40,7 +40,7 @@ class Authenticate {
 			}
 			else
 			{
-                return redirect()->guest('auth/login');
+                return redirect()->guest('auth/login')->with('basket_count',0);
 			}
 		}
 

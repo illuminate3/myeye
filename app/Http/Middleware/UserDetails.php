@@ -41,7 +41,7 @@ class UserDetails {
 			}
 			else
 			{
-                return view('auth/user_detail')->with('user',$user);
+                return view('auth/user_detail')->with('user',$user)->with('basket_count',0);
 			}
 		}
 

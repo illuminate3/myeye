@@ -25,14 +25,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PurchaseController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php">
+      <file leaf-file-name="AuthOrder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AuthOrder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66633165" vertical-offset="0" max-vertical-offset="3159">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-              <folding>
-                <element signature="e#39#61#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.4642857" vertical-offset="1053" max-vertical-offset="2106">
+              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,9 +45,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/admin_login.blade.php" />
         <option value="$PROJECT_DIR$/config/captcha.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php" />
@@ -98,6 +93,9 @@
         <option value="$PROJECT_DIR$/public/js/app/controller/BasketController.js" />
         <option value="$PROJECT_DIR$/public/js/app/views/basket/index.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/UserDetails.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/AuthOrder.php" />
       </list>
     </option>
   </component>
@@ -1084,20 +1082,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5416667" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_05_23_115312_create_questions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3809524" vertical-offset="318" max-vertical-offset="1677">
-          <caret line="19" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/admin/app/controller/lenses/LensesEditController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.077380955" vertical-offset="1170" max-vertical-offset="2691">
@@ -1421,10 +1405,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66633165" vertical-offset="0" max-vertical-offset="3159">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/UserDetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.110119045" vertical-offset="1176" max-vertical-offset="2184">
-          <caret line="34" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.45833334" vertical-offset="1176" max-vertical-offset="2184">
+          <caret line="43" column="92" selection-start-line="42" selection-start-column="92" selection-end-line="42" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -1432,18 +1424,24 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30952382" vertical-offset="1638" max-vertical-offset="5850">
-          <caret line="59" column="95" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="95" />
+          <caret line="59" column="52" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66633165" vertical-offset="0" max-vertical-offset="3159">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.45833334" vertical-offset="1137" max-vertical-offset="2145">
+          <caret line="42" column="79" selection-start-line="41" selection-start-column="79" selection-end-line="41" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AuthOrder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4642857" vertical-offset="1053" max-vertical-offset="2106">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

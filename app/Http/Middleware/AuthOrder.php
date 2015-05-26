@@ -39,7 +39,7 @@ class AuthOrder {
         if (! $user = $this->auth->user()){
 
             Flash::message('برای دیدن سبد خرید باید با اکانت کاربری خود وارد شوید');
-            return view('auth.login');
+            return view('auth.login')->with('basket_count',0);
 
         }
 
