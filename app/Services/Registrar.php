@@ -20,6 +20,7 @@ class Registrar implements RegistrarContract {
 			'password' => 'required|confirmed|min:6',
             'phone' => 'regex:/[0-9]{8,12}/',
             'mobile' => 'regex:/[0-9]{10,12}/',
+            'captcha' => 'required|captcha',
             'address' => 'min:10'
 		]);
 	}

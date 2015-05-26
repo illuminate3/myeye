@@ -41,6 +41,11 @@ Route::get('adminLogin',array('middleware' => 'guest','uses'=>'SessionController
 Route::post('adminLogin','SessionController@valid');
 
 /*
+ * Update user profile
+ */
+Route::get('userUpdate',array('uses'=>'UserController@updateProfile'));
+Route::post('userUpdate',array('uses'=>'UserController@updateProfileStore'));
+/*
  * Shop Basket
  */
 Route::get('/shopAll', array('middleware' => 'authOrder','uses'=>'ShopController@shop'));
@@ -54,7 +59,11 @@ Route::group(array('middleware' => 'authOrder'), function()
  */
 Route::get('/purchase', array('middleware' => ['auth','userDetail'],'uses'=>'PurchaseController@store'));
 Route::post('/userDetail', array('middleware' => ['auth'],'uses'=>'PurchaseController@updateUser'));
-
+/*
+ * Question
+ */
+Route::get('/question',array('middleware' =>'auth','uses'=>'QuestionController@index'));
+Route::post('/question',array('middleware' =>'auth','uses'=>'QuestionController@store'));
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -131,4 +140,14 @@ Route::group(array('prefix' => 'adminmaster','middleware'=>['adminAuth']),functi
     Route::post('/acceptedOrder/{id}','SalesController@acceptedOrder');
     Route::resource('/sales','SalesController');
     Route::resource('/users','UserController');
+
+    Route::get('/questionsAll','AdminQuestionsController@questionsAll');
+    Route::resource('/questions','AdminQuestionsController');
+
+    Route::get('/emailConfig','AdminEmailConfigController@index');
+    Route::post('/emailConfig','AdminEmailConfigController@store');
+    Route::get('/emailConfig/body','AdminEmailConfigController@body');
+    Route::get('/emailConfig/title','AdminEmailConfigController@title');
+   // Route::resource('/questions','AdminQuestionsController');
+
 });

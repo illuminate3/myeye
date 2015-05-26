@@ -29,11 +29,13 @@
                <!-- Slides Container -->
                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px;  width: 1920px; height: 1080px;
                overflow: hidden;">
-                   @foreach($slide_shows as $slide)
-                   <div>
-                       <img  class="img img-responsive" u="image" src2="{{$slide->image}}"  />
-                   </div>
-                   @endforeach
+                    @if($slide_shows)
+                       @foreach($slide_shows as $slide)
+                       <div>
+                           <img  class="img img-responsive" u="image" src2="{{$slide->image}}"  />
+                       </div>
+                       @endforeach
+                    @endif
 
                </div>
                <!-- bullet navigator container -->

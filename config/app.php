@@ -153,6 +153,12 @@ return [
 		 */
         'Laracasts\Flash\FlashServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
+        /*
+		 * Captcha
+		 */
+        'Mews\Captcha\CaptchaServiceProvider',
+        'anlutro\LaravelSettings\ServiceProvider',
+
 
 	],
 
@@ -205,6 +211,8 @@ return [
         'Flash'     => 'Laracasts\Flash\Flash',
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Form'      => 'Illuminate\Html\FormFacade',
+        'Captcha'   => 'Mews\Captcha\Facades\Captcha',
+        'Setting' => 'anlutro\LaravelSettings\Facade',
 
 	],
 

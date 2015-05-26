@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+           تنظیمات ایمیل ارسالی به کاربر پس از سفارش نهایی
+        </h1>
+        <!--<ol class="breadcrumb">-->
+            <!--<li>-->
+                <!--<i class="fa fa-dashboard"></i>  <a href="/adminmaster">شکل فریم عینک</a>-->
+            <!--</li>-->
+
+        <!--</ol>-->
+    </div>
+</div>
+
+<div class="row" style="margin-bottom: 2em">
+    <div class="col-lg-offset-1 col-lg-9">
+        <label for="editor1" >عنوان ایمیل </label>
+        <input class="form-control" type="text" ng-model="title"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-offset-1 col-lg-9">
+        <form method="post">
+            <label for="editor1">متن پیام ارسالی </label>
+            <textarea id="editor1" ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+            <span ng-click="save()" class="btn btn-lg btn-danger pull-right" style="margin-top: .5em">ذخیره </span>
+        </form>
+    </div>
+</div>

@@ -16,6 +16,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
 		'App\Http\Middleware\VerifyCsrfToken',
+        'anlutro\LaravelSettings\SaveMiddleware',
 	];
 
 	/**
@@ -30,6 +31,7 @@ class Kernel extends HttpKernel {
 		'adminAuth' => 'App\Http\Middleware\AdminFirewall',
 		'authOrder' => 'App\Http\Middleware\AuthOrder',
 		'userDetail' => 'App\Http\Middleware\UserDetails',
+
 	];
 
 }

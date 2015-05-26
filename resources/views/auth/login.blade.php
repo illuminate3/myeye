@@ -35,6 +35,13 @@
 							</div>
 						</div>
 
+                        <div class="form-group" >
+                            <label class="col-md-4 control-label">تصویر امنیتی : </label>
+                            <div class="col-md-6">
+                                <p>{!! captcha_img() !!}</p>
+                                <input type="text" name="captcha">
+                            </div>
+                        </div>
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">

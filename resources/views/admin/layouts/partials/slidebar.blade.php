@@ -25,6 +25,19 @@
             <li class="{{Request::is('adminmaster/sales') ? 'active' : ''}}">
                 <a href="/adminmaster/sales/#/orders"><i class="fa fa-fw fa-file"></i> سفارشات </a>
             </li>
+
+            <li class="{{Request::is('adminmaster/questions') ? 'active' : ''}}">
+                <a href="/adminmaster/questions/#/problems"><i class="fa fa-fw fa-file"></i>پشتیبانی </a>
+            </li>
+
+            <li class="{{Request::is('adminmaster/config') ? 'active' : ''}}">
+                            <a href="javascript:;" data-toggle="collapse" data-target="#config"><i class="fa fa-fw fa-arrows-v"></i>تنظیمات <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="config" class="collapse">
+                                <li >
+                                    <a href="/adminmaster/emailConfig/#emailSetting">ایمیل </a>
+                                </li>
+                            </ul>
+                        </li>
             {{--<li>--}}
                 {{--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>--}}
             {{--</li>--}}

@@ -15,7 +15,7 @@ class SessionController extends Controller {
 
     public function  valid(Request $request){
         $this->validate($request, [
-            'email' => 'required|email', 'password' => 'required',
+            'email' => 'required|email', 'password' => 'required','captcha' => 'required|captcha'
         ]);
 
         $credentials = $request->only('email', 'password');

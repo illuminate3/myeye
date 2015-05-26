@@ -109,6 +109,21 @@ var shwoodApp = angular.module('shwoodApp',['ngRoute','ui.tinymce'])
                     controller:'OrdersController',
                     templateUrl:'/js/admin/app/views/orders/index.html'
                 }
+            ).when('/problems/:itemId',
+                {
+                    controller:'QuestionsViewController',
+                    templateUrl:'/js/admin/app/views/questions/view.html'
+                }
+            ).when('/problems',
+                {
+                    controller:'QuestionsController',
+                    templateUrl:'/js/admin/app/views/questions/index.html'
+                }
+            ).when('/emailSetting',
+                {
+                    controller:'EmailsController',
+                    templateUrl:'/js/admin/app/views/emails/index.html'
+                }
             ).when('/',
                 {
                     controller:'MainController',

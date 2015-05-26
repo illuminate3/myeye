@@ -26,6 +26,7 @@
           <a href class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b> {{Auth::user()->name}} <i class="fa fa-user"></i> </a>
           <ul class="dropdown-menu">
               <li>
+                  <a href="/userUpdate" >ویرایش اطلاعات کاربری </a>
                   <a href="/auth/logout" > خروج  </a>
               </li>
           </ul>

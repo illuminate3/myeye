@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => 'comega@admin.com', 'name' => 'comega'],
+	'from' => ['address' => 'eliwood.ir@gmail.com', 'name' => 'عینک فروشی آنلاین الیوود'],
 
 	/*
 	|--------------------------------------------------------------------------

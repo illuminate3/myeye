@@ -53,6 +53,14 @@
 							</div>
 						</div>
 
+						<div class="form-group" >
+                            <label class="col-md-4 control-label">تصویر امنیتی : </label>
+                            <div class="col-md-6">
+                                <p>{!! captcha_img() !!}</p>
+                                <input type="text" name="captcha">
+                            </div>
+                        </div>
+
 						<div class="form-group">
                             <label class="col-md-4 control-label col-md-offset-4"><p>اطلاعات غیر ضروری : </p></label>
                         </div>
