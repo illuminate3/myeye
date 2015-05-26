@@ -47,8 +47,8 @@ angular.module('shwoodApp')
             DetailsFactory.activeSlideShow(detail.pivot.id)
                 .success(function(data){
                     console.log('aaaaaaaaaaa');
-                    //  init(item);
-                    detail.pivot.slide_show = ! detail.pivot.slide_show;
+                      init(item);
+                    //detail.pivot.slide_show = ! detail.pivot.slide_show;
                 });
         };
         $scope.deleteItem = function(id){

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Request;
 use App\Order;
 
-class ShopController extends Controller {
+class ShopController extends BaseController {
 
 
     public function shop(){

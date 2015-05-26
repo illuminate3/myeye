@@ -7,7 +7,6 @@ angular.module('eyewearApp')
             BasketFactory.getOrders()
                 .success(function(data){
                     $scope.orders = data;
-                    console.log($scope.orders);
                     $scope.totalPriceCal();
                 });
 

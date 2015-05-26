@@ -15,7 +15,11 @@ class PagesController extends Controller {
 //        if(empty($page)){
 //            return '';
 //        }
-        return $page->description;
+        if($page){
+            return $page->description;
+        }
+        return '';
+
 	}
 
 	/**
