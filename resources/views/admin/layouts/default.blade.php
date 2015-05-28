@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Quantech Admin Panel</title>
+    <title>عینک الیوود </title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->

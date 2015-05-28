@@ -6,12 +6,13 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-     <meta name="description" content="">
+     <meta name="keywords" content="الیوود, اولین مرکز عینک چوبی ایران, عینک طبی, عینک آفتابی, سفارش عینک, عینک طبی چوبی, عینک آفتابی چوبی, فروشگاه عینک, عینک چوبی" />
+     <meta name="description" content="الیوود : اولین مرکز عینک طبی و آفتابی چوبی ایران - از عینک های الیوود لذت ببرید." />
      <meta name="author" content="">
      <link rel="icon" href="../../favicon.ico">
 
 
-     <title>نام سایت </title>
+     <title>الیوود - اولین مرکز عینک چوبی ایران - عینک چوبی - سفارش عینک - عینک فروشی آنلاین - خرید آنلاین عینک طبی - خرید آنلاین عینک چوبی - فروشگاه عینک چوبی - عینک </title>
 
      <!-- Bootstrap core CSS -->
      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
