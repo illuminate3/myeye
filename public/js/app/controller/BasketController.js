@@ -22,7 +22,7 @@ angular.module('eyewearApp')
                 }else{
                     orderPrice = 0;
                 }
-                $scope.totalPrice += ( (order.price + orderPrice) * order.count);
+                $scope.totalPrice += ( (parseInt(order.price) + parseInt(orderPrice)) * order.count);
                 });
 
         };
