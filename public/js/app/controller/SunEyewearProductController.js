@@ -71,7 +71,7 @@ angular.module('eyewearApp')
             $scope.product.image_main_front = sunglass.image_main_front;
             $scope.product.image_main_side = sunglass.image_main_side;
             $scope.lensePrice = sunglass.lense.price;
-            $scope.totalPrice = parseInt(sunglass.lense.price + $scope.product.price);
+            $scope.totalPrice = parseInt(sunglass.lense.price) + parseInt($scope.product.price);
             $scope.titleLense = sunglass.lense.title;
             $scope.lenseId = sunglass.id;
         };
