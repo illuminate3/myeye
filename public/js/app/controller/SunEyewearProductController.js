@@ -66,12 +66,12 @@ angular.module('eyewearApp')
         $scope.lenseClick = function(sunglass){
 
             $scope.lensePrice = 0;
-           // $scope.totalPrice = 0;
+            $scope.totalPrice = 0;
             $scope.lenseId = 0;
             $scope.product.image_main_front = sunglass.image_main_front;
             $scope.product.image_main_side = sunglass.image_main_side;
             $scope.lensePrice = sunglass.lense.price;
-            $scope.totalPrice = sunglass.lense.price + $scope.totalPrice;
+            $scope.totalPrice = parseInt(sunglass.lense.price + $scope.product.price);
             $scope.titleLense = sunglass.lense.title;
             $scope.lenseId = sunglass.id;
         };
