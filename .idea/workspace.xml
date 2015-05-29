@@ -28,8 +28,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/app/views/basket/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5095477" vertical-offset="351" max-vertical-offset="1716">
+            <state vertical-scroll-proportion="0.47035176" vertical-offset="351" max-vertical-offset="1716">
               <caret line="22" column="89" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+              <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -1403,8 +1404,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app/views/basket/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5095477" vertical-offset="351" max-vertical-offset="1716">
+        <state vertical-scroll-proportion="0.47035176" vertical-offset="351" max-vertical-offset="1716">
           <caret line="22" column="89" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
           <folding />
         </state>
       </provider>

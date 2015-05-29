@@ -19,7 +19,7 @@
         </td>
 
         <td>
-            <span ng-if="order.lense_price == null">{{order.price | number : fractionSize}}</span><span ng-if="order.lense_price == null"> x </span>
+            <span ng-if="order.lense_price == null">{{order.price }}</span><span ng-if="order.lense_price == null"> x </span>
             <span ng-if="order.lense_price != null">{{ (order.price + order.lense_price) }}</span><span ng-if="order.lense_price != null"> x </span>
             <span><input class="input-sm" style="text-align: center" type="text"  ng-model="order.count" ng-change="change_quantity(order);" min="0" max="20" maxlength="2" minlength="1" ></span>
         </td>
