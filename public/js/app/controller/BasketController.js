@@ -14,8 +14,15 @@ angular.module('eyewearApp')
         init();
 
         $scope.totalPriceCal = function(){
+            $scope.totalPrice=0;
+            var orderPrice=0;
             angular.forEach($scope.orders,function(order,key) {
-                $scope.totalPrice += (order.price * order.count);
+                if(order.lense_price != null){
+                    orderPrice =  order.lense_price;
+                }else{
+                    orderPrice = 0;
+                }
+                $scope.totalPrice += ( (order.price + orderPrice) * order.count);
                 });
 
         };

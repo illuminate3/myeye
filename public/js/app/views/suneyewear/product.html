@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-4 pull-right col-sm-5 col-xs-11 otherProductsPrice" >
             <div>
-                <p style="font-weight: bold">{{ ( product.price + lensePrice ) | number : fractionSize}} تومان </p>
+                <p style="font-weight: bold">{{ totalPrice | number : fractionSize}} تومان </p>
                 <a ng-href="/orders/{{product.id}}/{{lenseId}}" class="btn btn-lg btn-warning">اضافه به سبد خرید </a>
 
             </div>

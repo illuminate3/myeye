@@ -65,7 +65,8 @@
                 <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
             </td>
             <td>{{order.count}}</td>
-            <td>{{order.count * order.price}}</td>
+            <td ng-if="order.lense_price == null">{{order.count * order.price}}</td>
+            <td ng-if="order.lense_price != null">{{order.count * (order.price + order.lense_price) }}</td>
             <td><span class="btn btn-primary" ng-click="acceptOrder(order)">خرید نهایی</span></td>
             <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
         </tr>
@@ -107,7 +108,8 @@
                 <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
             </td>
             <td>{{order.count}}</td>
-            <td>{{order.price}}</td>
+            <td ng-if="order.lense_price == null">{{order.price}}</td>
+            <td ng-if="order.lense_price != null">{{ (order.price + order.lense_price) * (order.count)}}</td>
             <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
         </tr>
         </tbody>
@@ -147,7 +149,8 @@
                 <span ng-if="order.lense_title != null">{{order.lense_title}} <img class="img img-responsive img-rounded" style="width: 30px" ng-src="{{order.raw_lense_image}}" alt=""/></span>
             </td>
             <td>{{order.count}}</td>
-            <td>{{order.price}}</td>
+            <td ng-if="order.lense_price == null">{{order.price}}</td>
+            <td ng-if="order.lense_price != null">{{ (order.price + order.lense_price) * (order.count)}}</td>
             <td><span  ng-click="deleteItem(order)" class="btn btn-danger btn-mini"><i class="icon-white icon-heart"></i> حذف</span></td>
         </tr>
         </tbody>

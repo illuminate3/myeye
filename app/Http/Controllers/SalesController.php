@@ -67,7 +67,7 @@ class SalesController extends Controller {
             })->select('products.title','materials.title As material_title','material_product.image_main_front As material_product_image','material_product.price','sunglassesLenses.image_main_front As lense_image','orders.count','orders.active','orders.seen')
             ->leftJoin('lenses',function($join) {
                 $join->on('sunglassesLenses.lense_id', '=', 'lenses.id');
-            })->select('orders.id','lenses.image as raw_lense_image','lenses.title As lense_title','products.title','materials.title As material_title','material_product.image_main_front As material_product_image','material_product.price','sunglassesLenses.image_main_front As lense_image','orders.count','orders.active','orders.seen')
+            })->select('orders.id','lenses.image as raw_lense_image','lenses.title As lense_title','lenses.price As lense_price','products.title','materials.title As material_title','material_product.image_main_front As material_product_image','material_product.price','sunglassesLenses.image_main_front As lense_image','orders.count','orders.active','orders.seen')
             ->get();
 	}
 

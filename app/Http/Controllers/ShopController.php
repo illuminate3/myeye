@@ -19,6 +19,9 @@ class ShopController extends BaseController {
             ->leftJoin('sunglassesLenses',function($join) {
                 $join->on('orders.sunglassesLense_id', '=', 'sunglassesLenses.id');
                 //->where('material.active','=',1);
+            })->leftJoin('lenses',function($join) {
+                $join->on('sunglassesLenses.lense_id', '=', 'lenses.id');
+                //->where('material.active','=',1);
             })->leftJoin('materials',function($join) {
                 $join->on('materials.id', '=', 'material_product.material_id');
                 // ->where('product.active','=',1);
@@ -26,7 +29,7 @@ class ShopController extends BaseController {
                 $join->on('products.id', '=', 'material_product.product_id');
                 // ->where('product.active','=',1);
             })
-            ->select('orders.id','orders.material_product_id','orders.sunglassesLense_id','orders.count','material_product.price','material_product.image_main_front As material_product_Image','sunglassesLenses.image_main_front As sunglass_image','products.title As product_title','materials.title As material_title')
+            ->select('orders.id','orders.material_product_id','orders.sunglassesLense_id','orders.count','material_product.price','material_product.image_main_front As material_product_Image','sunglassesLenses.image_main_front As sunglass_image','products.title As product_title','materials.title As material_title','lenses.price As lense_price')
             ->get();
 
         return Order::whereActive(0)->with('material_product')->with('sunglassesLense')->get();
