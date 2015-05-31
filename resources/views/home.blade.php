@@ -12,7 +12,7 @@
            <!-- Jssor Slider Begin -->
            <!-- To move inline styles to css file/block, please specify a class name for each element. -->
            <!-- ================================================== -->
-           <div id="slider1_container" style="display: none; position: relative; margin: 0 auto; width: 1920px; height: 1080px; overflow: hidden;">
+           <div id="slider1_container" style="display: none; position: relative; margin: 0 auto; width: 1920px; height: 1080px; overflow: hidden;" class="hidden-xs">
 
                <!-- Loading Screen -->
                {{--<div u="loading" style="position: absolute; top: 0px; left: 0px;">--}}
@@ -28,7 +28,7 @@
 
                <!-- Slides Container -->
                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px;  width: 1920px; height: 1080px;
-               overflow: hidden;">
+               overflow: hidden;" >
                     @if($slide_shows)
                        @foreach($slide_shows as $slide)
                        <div>
@@ -54,7 +54,7 @@
        </div>
 
 
-    <div class="container" style="margin-top: 1em">
+    <div class="container hidden-xs" style="margin-top: 1em" >
         <div class="row">
             <style>
                 .slider-for {

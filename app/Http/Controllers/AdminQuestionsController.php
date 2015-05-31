@@ -40,7 +40,7 @@ class AdminQuestionsController extends Controller {
 	 */
 	public function store()
 	{
-        ;
+
 	}
 
 	/**

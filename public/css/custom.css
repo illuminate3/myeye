@@ -112,3 +112,22 @@ footer {
 }
 
 
+
+/* nav bar do not collapse*/
+.navbar-collapse.collapse {
+    display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+    float: right !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+}
+
+.navbar-right {
+    float: left!important;
+}
+
+

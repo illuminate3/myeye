@@ -2,12 +2,7 @@
      <nav class="navbar navbar-inverse navbar-fixed-top">
        <div class="container">
          <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
+
            <ul class="nav navbar-nav">
                <li class=" {{Request::is('eyewear') ? 'active' : '' || Request::is('eyewear-product') ? 'active' : '' }}"><a href="/eyewear/#/rxeyewear">عینک طبی <span class="sr-only">(current)</span></a></li>
                <li class="{{Request::is('sunEyewear') ? 'active' : '' || Request::is('sunEyewear-product') ? 'active' : ''}}"><a  href="/sunEyewear/#/suneyewear">عینک آفتابی</a></li>
